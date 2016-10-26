@@ -72,13 +72,13 @@ function the_date_generator_form($from, &$form_submit) {
 
   $form['date'] = array(
     '#type' => 'date',
-    '#title' => t('date'),
+    // '#title' => t('date'),
     '#required' => TRUE,
   );
 
   $form['email'] = array(
     '#type' => 'textfield',
-    '#title' => t('email'),
+    // '#title' => t('email'),
     '#default_value' => t('Enter your e-mail. We will send you the results.'),
     '#size' => 60,
     '#maxlength' => 128,
