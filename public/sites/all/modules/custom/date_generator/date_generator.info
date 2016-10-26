@@ -1,0 +1,4 @@
+; General information
+name = Date Generator
+description = Provide a date generator for Malmoscenen
+core = 7.x
