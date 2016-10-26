@@ -1,0 +1,15 @@
+name = Scen
+core = 7.x
+
+; Javascripts.
+scripts[] = dist/js/bundle.js
+
+; Stylesheets.
+stylesheets[print][] = dist/css/print.css
+stylesheets[screen][] = dist/css/main.css
+
+; Regions.
+regions[header] = Header
+regions[content-top] = Content top
+regions[content] = Content
+regions[footer] = Footer
