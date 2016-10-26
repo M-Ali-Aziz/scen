@@ -18,7 +18,7 @@ function date_generator_block_info() {
   $blocks = array();
   $blocks['date_generator'] = array(
     'info' => t('Date Generator'),
-    'region' => 'content',
+    'region' => 'content-top',
     'status' => TRUE,
     'visidility' => BLOCK_VISIBILITY_LISTED,
     'page' => variable_get('site_frontpage', NULL),
@@ -106,7 +106,7 @@ function the_date_generator_form($from, &$form_submit) {
  * date generator form submit handler
  */
 function the_date_generator_form_submit($form, &$form_state) {
-
+  drupal_set_message('The date generator is submited!');
 }
 
 
