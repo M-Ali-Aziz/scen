@@ -53,27 +53,19 @@ function date_generator_form() {
  * date generator form
  */
 function the_date_generator_form($from, &$form_submit) {
-  
-  // $form['title'] = array(
-  //   '#type' => 'textfield',
-  //   '#title' => t('tilte'),
-  //   '#default_value' => t('Date Generator'),
-  //   '#size' => 60,
-  //   '#maxlength' => 128,
-  //   '#required' => TRUE,
-  // );
-
-  // $form['body'] = array(
-  //   '#type' => 'textarea',
-  //   '#title' => t('body'),
-  //   '#default_value' => t('Create a very, very wonderful evening, customized just for you! *'),
-  //   '#required' => TRUE,
-  // );
 
   $form['date'] = array(
-    '#type' => 'date',
-    // '#title' => t('date'),
+    '#type' => 'date_popup',
+    // '#date_timezone' => 'Europe/Stockholm', 
+    '#default_value' => date('Y-m-d H:i:s'),
+    '#date_year_range' => '-1:+1',
+    '#date_format' => 'l d F',
+    '#date_label_position' => 'none',
     '#required' => TRUE,
+    
+    '#attributes' => array(
+      'class' => array('date-input')
+      ),
   );
 
   $form['email'] = array(
@@ -89,15 +81,6 @@ function the_date_generator_form($from, &$form_submit) {
     '#type' => 'submit',
     '#value' => t('Generating dream evening - Go!'),
   );
-
-  // $form['text'] = array(
-  //   '#type' => 'textfield',
-  //   '#title' => t('text'),
-  //   '#default_value' => t('(*Culture is for all)'),
-  //   '#size' => 60,
-  //   '#maxlength' => 128,
-  //   '#required' => TRUE,
-  // );
 
   return $form;
 }
