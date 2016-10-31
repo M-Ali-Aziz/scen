@@ -7,9 +7,9 @@
 /**
  * Implementation of hook_init().
  */
-function date_generator_init() {
-  // drupal_set_message('Date Generator module is ON!');
-}
+// function date_generator_init() {
+//   // drupal_set_message('Date Generator module is ON!');
+// }
 
 /**
  * Implementation of hook_block_info().
@@ -57,21 +57,26 @@ function the_date_generator_form($from, &$form_submit) {
   $form['date'] = array(
     '#type' => 'date_popup',
     // '#date_timezone' => 'Europe/Stockholm', 
-    '#default_value' => date('Y-m-d H:i:s'),
+    // '#default_value' => date('Y-m-d H:i:s'),
     '#date_year_range' => '-1:+1',
     '#date_format' => 'l d F',
     '#date_label_position' => 'none',
     '#required' => TRUE,
-    
+
     '#attributes' => array(
-      'class' => array('date-input')
+      'class' => array('date-input'),
+      'placeholder' => date('l d F')
+
       ),
   );
 
   $form['email'] = array(
     '#type' => 'textfield',
-    // '#title' => t('email'),
-    '#default_value' => t('Enter your e-mail. We will send you the results.'),
+    // '#default_value' => t('Enter your e-mail. We will send you the results.'),
+    '#attributes' => array(
+      'placeholder' => t('Enter your e-mail. We will send you the results.')
+      ),
+    
     '#size' => 60,
     '#maxlength' => 128,
     '#required' => TRUE,
@@ -89,7 +94,7 @@ function the_date_generator_form($from, &$form_submit) {
  * date generator form submit handler
  */
 function the_date_generator_form_submit($form, &$form_state) {
-  drupal_set_message('The date generator is submited!');
+  drupal_set_message('The date generator was submited!');
 }
 
 
