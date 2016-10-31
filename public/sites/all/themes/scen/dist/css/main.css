@@ -389,7 +389,12 @@ body {
 /* No files to import found in components//**/
 /* */
 .date-generator-wrapper {
-  background: red; }
+  background: red;
+  padding: 200px;
+  text-align: center; }
 
-/* No files to import found in content//**/
-/* */
+.date-generator-wrapper h1 {
+  margin-top: 0; }
+
+.date-generator-wrapper .description {
+  display: none; }
