@@ -157,13 +157,21 @@ function the_date_generator_form_submit($form, &$form_state) {
 
   foreach ($nodes_type_before_activity as $node_type_before_activity) {
 
+    // Getting all perfomances dates
     $malmo_stadsteater_dates = substr($node_type_before_activity->field_malmo_stadsteater_date['sv'][0]['value'], 0, -9);
-
     $malmo_opera_dates = substr($node_type_before_activity->field_malmo_opera_date['sv'][0]['value'], 0, -9);
-
     $skanes_dansteater_dates = substr($node_type_before_activity->field_skanes_dansteater_date['sv'][0]['value'], 0, -9);
+    // push the result to the array
+    if ($malmo_stadsteater_dates) {
+      array_push($all_performances_dates, $malmo_stadsteater_dates);
+    }elseif ($malmo_opera_dates) {
+      array_push($all_performances_dates, $malmo_opera_dates);
+    }elseif ($skanes_dansteater_dates) {
+      array_push($all_performances_dates, $skanes_dansteater_dates);
+    }
 
-      array_push($all_performances_dates, array($malmo_stadsteater_dates, $malmo_opera_dates, $skanes_dansteater_dates));
+
+    
     // if ($form_date_value == $malmo_stadsteater_dates || $malmo_opera_dates || $skanes_dansteater_dates) {
     //   echo "date maching!!!";
     // }
