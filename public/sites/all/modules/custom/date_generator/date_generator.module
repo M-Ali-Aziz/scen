@@ -181,15 +181,16 @@ function the_date_generator_form_submit($form, &$form_state) {
   // var_dump($form_date_value);
   // var_dump($all_performances_dates);
 
-  // if (!in_array($form_date_value, $all_performances_dates)) {
-  //   echo 'The date is not matching!!!!!!!!!!';
-  //   drupal_set_message($form_date_value);
-  //   drupal_set_message(t('Oops! We could not found a performance in ' . $form_date_value . '.'), 'error');
-  //   return;
-  // }
+  // return error message if there is no performance matched with the form_date_value.
+  if (!in_array($form_date_value, $all_performances_dates)) {
+    echo 'The date is not matching!!!!!!!!!!';
+    drupal_set_message($form_date_value);
+    drupal_set_message(t('Oops! We could not found a performance in ' . $form_date_value . '.'), 'error');
+    return;
+  }
     
-  // drupal_set_message($form_date_value);
-  // drupal_set_message(t('COOL! date is matching.'));
+  drupal_set_message($form_date_value);
+  drupal_set_message(t('COOL! date is matching.'));
   
   // die;
 
