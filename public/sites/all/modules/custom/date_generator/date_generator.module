@@ -87,9 +87,9 @@ function the_date_generator_form($from, &$form_state) {
     '#type' => 'date_popup',
     // '#date_timezone' => 'Europe/Stockholm', 
     // '#default_value' => date('Y-m-d H:i:s'),
-    // '#default_value' => date('Y-m-d'),
+    '#default_value' => date('Y-m-d'),
     '#date_year_range' => '-1:+1',
-    '#date_format' => 'l d F',
+    '#date_format' => 'd F Y',
     '#date_label_position' => 'none',
     '#attributes' => array(
       'class' => array('date-input'),
@@ -134,7 +134,7 @@ function the_date_generator_form_submit($form, &$form_state) {
   // 1- Getting date amd email value from submitted form
   // the date(field) value from the submitted form
   $form_date_value = $form['date']['#value']['date'];
-  // convert date format from "l d F" to "Y-m-d".
+  // convert date format to "Y-m-d".
   $form_date_value = date('Y-m-d', strtotime($form_date_value));
   // the email(field) value from the submitted form
   $form_mail_value = $form['email']['#value'];
@@ -146,22 +146,25 @@ function the_date_generator_form_submit($form, &$form_state) {
   // 2- Getting nodes
   // load all nodes
   $nodes_type_before_activity = node_load_multiple(array(), array('type' => array(
+    'before_activity',
     'malmo_stadsteater',
     'malmo_opera',
     'skanes_dansteater',
+    'after_activity',
     )));
 
+  // array of all performances dates
   $all_performances_dates = array();
 
-    // dprint_r($nodes_type_before_activity);
 
+  // loop throw all nodes
   foreach ($nodes_type_before_activity as $node_type_before_activity) {
 
     // Getting all perfomances dates
     $malmo_stadsteater_dates = substr($node_type_before_activity->field_malmo_stadsteater_date['sv'][0]['value'], 0, 10);
     $malmo_opera_dates = substr($node_type_before_activity->field_malmo_opera_date['sv'][0]['value'], 0, 10);
     $skanes_dansteater_dates = substr($node_type_before_activity->field_skanes_dansteater_date['sv'][0]['value'], 0, 10);
-    // push the result to the array
+    // push the result(dates) to  $all_performances_dates array
     if ($malmo_stadsteater_dates) {
       array_push($all_performances_dates, $malmo_stadsteater_dates);
     }elseif ($malmo_opera_dates) {
@@ -171,42 +174,24 @@ function the_date_generator_form_submit($form, &$form_state) {
     }
 
 
-
-    // if ($form_date_value == $malmo_stadsteater_dates || $malmo_opera_dates || $skanes_dansteater_dates) {
-    //   echo "date maching!!!";
-    // }
-
-    // dprint_r($node_type_before_activity);
-
-    // $nid = $node_type_before_activity->nid;
-
-    // $view = node_load($nid);
-    // $view = node_view($view);
-    // $node_view = entity_metadata_wrapper('node', $view);
-
-    // dprint_r($node_view);
-
-    // dprint_r('malmo_stadsteater: ' . $malmo_stadsteater_dates);
-    // dprint_r('malmo_opera: ' . $malmo_opera_dates);
-    // dprint_r('skanes_dansteater: ' . $skanes_dansteater_dates);
+    // dprint_r($node_type_before_activity->type);
 
   }
+  // die;
+  // var_dump($form_date_value);
+  // var_dump($all_performances_dates);
+
+  // if (!in_array($form_date_value, $all_performances_dates)) {
+  //   echo 'The date is not matching!!!!!!!!!!';
+  //   drupal_set_message($form_date_value);
+  //   drupal_set_message(t('Oops! We could not found a performance in ' . $form_date_value . '.'), 'error');
+  //   return;
+  // }
+    
+  // drupal_set_message($form_date_value);
+  // drupal_set_message(t('COOL! date is matching.'));
   
-  var_dump($form_date_value);
-  var_dump($all_performances_dates);
-
-  if (in_array($form_date_value, $all_performances_dates)) {
-    echo "date is matching!!!";
-    drupal_set_message($form_date_value);
-    drupal_set_message(t('COOL! date is matching.'));
-  }
-  else{
-    echo 'No date matching!!!!!!!!!!';
-    drupal_set_message($form_date_value);
-    drupal_set_message(t('Ooops! We could not found a performance in this date'), 'error');
-  }
-
- die;
+  // die;
 
 }
 
