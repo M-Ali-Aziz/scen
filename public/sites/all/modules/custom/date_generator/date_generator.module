@@ -163,7 +163,7 @@ function the_date_generator_form_submit($form, &$form_state) {
 
     $skanes_dansteater_dates = substr($node_type_before_activity->field_skanes_dansteater_date['sv'][0]['value'], 0, -9);
 
-      array_push($all_performances_dates, $malmo_stadsteater_dates);
+      array_push($all_performances_dates, array($malmo_stadsteater_dates, $malmo_opera_dates, $skanes_dansteater_dates));
     // if ($form_date_value == $malmo_stadsteater_dates || $malmo_opera_dates || $skanes_dansteater_dates) {
     //   echo "date maching!!!";
     // }
@@ -183,20 +183,21 @@ function the_date_generator_form_submit($form, &$form_state) {
     // dprint_r('skanes_dansteater: ' . $skanes_dansteater_dates);
 
   }
-    var_dump($form_date_value);
-    var_dump($all_performances_dates);
+  
+  var_dump($form_date_value);
+  var_dump($all_performances_dates);
 
-    if (in_array($all_performances_dates, array($form_date_value))) {
-      echo "date is matching!!!";
-      drupal_set_message(t('COOL! date is matching.'));
-    }
-    else{
-      echo 'No date matching!!!!!!!!!!';
-      drupal_set_message($form_date_value);
-      drupal_set_message(t('Ooops! We could not found a performance in this date'), 'error');
-    }
+  if (in_array($all_performances_dates, array($form_date_value))) {
+    echo "date is matching!!!";
+    drupal_set_message(t('COOL! date is matching.'));
+  }
+  else{
+    echo 'No date matching!!!!!!!!!!';
+    drupal_set_message($form_date_value);
+    drupal_set_message(t('Ooops! We could not found a performance in this date'), 'error');
+  }
 
-   die;
+ die;
 
 }
 
