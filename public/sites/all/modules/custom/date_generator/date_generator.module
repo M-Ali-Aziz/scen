@@ -143,8 +143,8 @@ function the_date_generator_form_submit($form, &$form_state) {
 
 
 
-  // 2- Getting node of type before_activity
-  // load all node of type before_activity
+  // 2- Getting nodes
+  // load all nodes
   $nodes_type_before_activity = node_load_multiple(array(), array('type' => array(
     'malmo_stadsteater',
     'malmo_opera',
@@ -158,9 +158,9 @@ function the_date_generator_form_submit($form, &$form_state) {
   foreach ($nodes_type_before_activity as $node_type_before_activity) {
 
     // Getting all perfomances dates
-    $malmo_stadsteater_dates = substr($node_type_before_activity->field_malmo_stadsteater_date['sv'][0]['value'], 0, -9);
-    $malmo_opera_dates = substr($node_type_before_activity->field_malmo_opera_date['sv'][0]['value'], 0, -9);
-    $skanes_dansteater_dates = substr($node_type_before_activity->field_skanes_dansteater_date['sv'][0]['value'], 0, -9);
+    $malmo_stadsteater_dates = substr($node_type_before_activity->field_malmo_stadsteater_date['sv'][0]['value'], 0, 10);
+    $malmo_opera_dates = substr($node_type_before_activity->field_malmo_opera_date['sv'][0]['value'], 0, 10);
+    $skanes_dansteater_dates = substr($node_type_before_activity->field_skanes_dansteater_date['sv'][0]['value'], 0, 10);
     // push the result to the array
     if ($malmo_stadsteater_dates) {
       array_push($all_performances_dates, $malmo_stadsteater_dates);
@@ -171,7 +171,7 @@ function the_date_generator_form_submit($form, &$form_state) {
     }
 
 
-    
+
     // if ($form_date_value == $malmo_stadsteater_dates || $malmo_opera_dates || $skanes_dansteater_dates) {
     //   echo "date maching!!!";
     // }
@@ -195,8 +195,9 @@ function the_date_generator_form_submit($form, &$form_state) {
   var_dump($form_date_value);
   var_dump($all_performances_dates);
 
-  if (in_array($all_performances_dates, array($form_date_value))) {
+  if (in_array($form_date_value, $all_performances_dates)) {
     echo "date is matching!!!";
+    drupal_set_message($form_date_value);
     drupal_set_message(t('COOL! date is matching.'));
   }
   else{
