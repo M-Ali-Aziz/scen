@@ -153,9 +153,21 @@ function the_date_generator_form_submit($form, &$form_state) {
     'after_activity',
     )));
 
-  // array of all performances dates
+  // All performances dates
   $all_performances_dates = array();
 
+  // Bifore Activity node ids
+  $before_activity_nids = array();
+  // After Activity node ids
+  $after_activity_nids = array();
+  // Malmo Stadsteater node ids
+  $malmo_stadsteater_nids = array();
+  // Malmo Stadsteater node ids
+  $malmo_stadsteater_nids = array();
+  // Malmo Opera node ids
+  $malmo_opera_nids = array();
+  // Skanes Dansteater node ids
+  $skanes_dansteater_nids = array();
 
   // loop throw all nodes
   foreach ($nodes_type_before_activity as $node_type_before_activity) {
@@ -174,12 +186,59 @@ function the_date_generator_form_submit($form, &$form_state) {
     }
 
 
-    // dprint_r($node_type_before_activity->type);
+    // Getting all node ids
+    // Getting node ids(nid) of type before_activity
+    if ($node_type_before_activity->type == 'before_activity') {
+      // dprint_r($node_type_before_activity->nid);
+      // var_dump($node_type_before_activity->nid);
+      $before_activity_nid = $node_type_before_activity->nid;
+      array_push($before_activity_nids, $before_activity_nid);
+    }
+    // Getting node ids(nid) of type after_activity
+    if ($node_type_before_activity->type == 'after_activity') {
+      // dprint_r($node_type_before_activity->nid);
+      // var_dump($node_type_before_activity->nid);
+      $after_activity_nid = $node_type_before_activity->nid;
+      array_push($after_activity_nids, $after_activity_nid);
 
+    }
+    // Getting node ids(nid) of type malmo_stadsteater
+    if ($node_type_before_activity->type == 'malmo_stadsteater') {
+      // dprint_r($node_type_before_activity->nid);
+      // var_dump($node_type_before_activity->nid);
+      $malmo_stadsteater_nid = $node_type_before_activity->nid;
+      array_push($malmo_stadsteater_nids, $malmo_stadsteater_nid);
+
+    }
+    // Getting node ids(nid) of type malmo_opera
+    if ($node_type_before_activity->type == 'malmo_opera') {
+      // dprint_r($node_type_before_activity->nid);
+      // var_dump($node_type_before_activity->nid);
+      $malmo_opera_nid = $node_type_before_activity->nid;
+      array_push($malmo_opera_nids, $malmo_opera_nid);
+
+    }
+    // Getting node ids(nid) of type skanes_dansteater
+    if ($node_type_before_activity->type == 'skanes_dansteater') {
+      // dprint_r($node_type_before_activity->nid);
+      // var_dump($node_type_before_activity->nid);
+      $skanes_dansteater_nid = $node_type_before_activity->nid;
+      array_push($skanes_dansteater_nids, $skanes_dansteater_nid);
+
+    }
+
+
+      // dprint_r($node_type_before_activity->type);
   }
   // die;
   // var_dump($form_date_value);
   // var_dump($all_performances_dates);
+  // var_dump($before_activity_nids);
+  // var_dump($after_activity_nids);
+  // var_dump($malmo_stadsteater_nids);
+  // var_dump($malmo_opera_nids);
+  var_dump($skanes_dansteater_nids);
+  die;
 
   // return error message if there is no performance matched with the form_date_value.
   if (!in_array($form_date_value, $all_performances_dates)) {
