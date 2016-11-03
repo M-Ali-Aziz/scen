@@ -244,9 +244,6 @@ function the_date_generator_form_submit($form, &$form_state) {
       }
 
     }
-
-
-      dprint_r($load_node->type);
   }
   // var_dump($form_date_value);
   // var_dump($all_performances_dates);
@@ -258,7 +255,7 @@ function the_date_generator_form_submit($form, &$form_state) {
   // var_dump($all_matched_performances_nids);
   // dprint_r($all_matched_performances_nids);
 
-  die;
+  // die;
 
 
 
@@ -273,19 +270,32 @@ function the_date_generator_form_submit($form, &$form_state) {
   drupal_set_message($form_date_value);
   drupal_set_message(t('COOL! date is matching.'));
 
+  // Get random nids
+  // Randomly getting two nids from $before_activity_nids
+  $random_before_activity_nid_keys = array_rand($before_activity_nids, 2);
+  $random_before_activity_nid_one = $before_activity_nids[$random_before_activity_nid_keys[0]];
+  $random_before_activity_nid_two = $before_activity_nids[$random_before_activity_nid_keys[1]];
+  // var_dump($before_activity_nids);
+  // var_dump($random_before_activity_nid_keys);
+  // var_dump($random_before_activity_nid_one);
+  // var_dump($random_before_activity_nid_two);
 
-
-  // Get a random value from $all_matched_performances_nids
+  // Randomly get one nid from $all_matched_performances_nids
   $random_performance_nid_key = array_rand($all_matched_performances_nids, 1);
   $random_performance_nid = $all_matched_performances_nids[$random_performance_nid_key];
-  var_dump($all_matched_performances_nids);
-  var_dump($random_performance_nid_key);
-  var_dump($random_performance_nid);
+  // var_dump($all_matched_performances_nids);
+  // var_dump($random_performance_nid_key);
+  // var_dump($random_performance_nid);
 
-  die;
+  // Randomly getting nids from $after_activity_nids
+  $random_after_activity_nid_keys = array_rand($after_activity_nids, 2);
+  $random_after_activity_nid_one = $after_activity_nids[$random_after_activity_nid_keys[0]];
+  $random_after_activity_nid_two = $after_activity_nids[$random_after_activity_nid_keys[1]];
+  // var_dump($after_activity_nids);
+  // var_dump($random_after_activity_nid_keys);
+  // var_dump($random_after_activity_nid_one);
+  // var_dump($random_after_activity_nid_two);
 
-  
-  
   // die;
 
 }
