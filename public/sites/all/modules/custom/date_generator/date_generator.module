@@ -5,42 +5,6 @@
  */
 
 /**
- * Implementation of hook_init().
- */
-// function date_generator_init() {
-//   drupal_set_message('Date Generator module is ON!');
-// }
-
-
-function date_generator_node_load($nodes, $types) {
-  // drupal_set_message('hook load!');
-
-  // dprint_r($nodes); die;
-  // dprint_r($types); die;
-
-}
-
-//   function date_generator_node_view($node, $view_mode, $langcode) {
-//   drupal_set_message('hook_node_view() is ON!');
-
-// // // Unified way of getting $node->title, $user->name, ...
-// // $wrapper->label();
-
-// // // Unified way of getting $node->nid, $user->uid, ...
-// // $wrapper->getIdentifier();
-
-// // // Unified way of getting $node->type, ...
-// // $wrapper->getBundle();
-
-//   // $node_wrapper = entity_metadata_wrapper('node', $node);
-//   // dprint_r($node_wrapper); die;
-
-//   dprint_r($node); die;
-
-//   }
-
-
-/**
  * Implementation of hook_block_info().
  */
 function date_generator_block_info() {
@@ -72,199 +36,163 @@ function date_generator_block_view($delta = '') {
 }
 
 /**
- * Implementation of hook_form().
- */
-function date_generator_form() {
-  return drupal_get_form('the_date_generator_form');
-}
-
-/**
- * The date generator form
+ * The date generator form.
  */
 function the_date_generator_form($from, &$form_state) {
-
   $form['date'] = array(
     '#type' => 'date_popup',
-    // '#date_timezone' => 'Europe/Stockholm', 
-    // '#default_value' => date('Y-m-d H:i:s'),
     '#default_value' => date('Y-m-d'),
     '#date_year_range' => '0:+1',
     '#date_format' => 'd F Y',
+    '#required' => TRUE,
     '#date_label_position' => 'none',
     '#attributes' => array(
       'class' => array('date-input'),
       'placeholder' => date('l d F'),
     ),
-    // '#required' => TRUE,
   );
 
   $form['email'] = array(
     '#type' => 'textfield',
-    // '#default_value' => t('Enter your e-mail. We will send you the results.'),
     '#attributes' => array(
       'placeholder' => t('Enter your e-mail. We will send you the results.')
     ),
     '#size' => 60,
     '#maxlength' => 128,
-    // '#required' => TRUE,
+    '#required' => TRUE,
   );
 
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Generating dream evening - Go!'),
-    // '#submit' => array('the_date_generator_form_submit'),
   );
 
-  // $form['#submit'][] = 'the_date_generator_form_submit';
-
-  // $form['actions']['submit']['#submit'][0] = 'the_date_generator_form_submit';
-
   return $form;
+}
+
+
+/**
+ * Validate form input.
+ */
+function the_date_generator_form_validate(&$form, &$form_state) {
+  $values = $form_state['values'];
+
+  $nodes = node_load_multiple(array(), array('type' => array(
+    'malmo_stadsteater',
+    'malmo_opera',
+    'skanes_dansteater',
+  )));
+
+  // Validate email field.
+  if (!valid_email_address($values['email'])) {
+    echo 'Not a valid email!';
+
+    form_set_error('email', t('Not a valid email.'));
+  }
+
+  // Loop all nodes.
+  foreach ($nodes as $node) {
+    $wrapper = entity_metadata_wrapper('node', $node);
+
+    // Getting all perfomances dates.
+    if (isset($wrapper->field_malmo_stadsteater_date)) {
+      $all_performances_dates[] = format_date($wrapper->field_malmo_stadsteater_date->value(), 'custom', 'Y-m-d');
+    }
+
+    if (isset($wrapper->field_malmo_opera_date)) {
+      $all_performances_dates[] = format_date($wrapper->field_malmo_opera_date->value(), 'custom', 'Y-m-d');
+    }
+
+
+    if (isset($wrapper->skanes_dansteater_dates)) {
+      $all_performances_dates[] = format_date($wrapper->skanes_dansteater_dates->value(), 'custom', 'Y-m-d');
+    }
+  }
+
+  // Return error message if there is no performance matched with the wished date.
+  if (!in_array($values['date'], $all_performances_dates)) {
+    echo 'No valid dates found!';
+    // TODO: Print form errors in theme.
+    form_set_error('date', t('Oops! We could not found a performance in ' . $values['date'] . '.'));
+  }
 }
 
 /**
  * date generator form submit handler
  */
-function the_date_generator_form_submit($form, &$form_state) {
-  // drupal_set_message('The date generator has been submitted!');
-  // dprint_r($form); die;
-  // dprint_r($form['date']['#value']['date']); die;
-  // dprint_r($form_state); die;
+function the_date_generator_form_submit(&$form, &$form_state) {
+  $values = $form_state['values'];
 
-  // 1- Getting date amd email value from submitted form
-  // the date(field) value from the submitted form
-  $form_date_value = $form['date']['#value']['date'];
-  // convert date format to "Y-m-d".
-  $form_date_value = date('Y-m-d', strtotime($form_date_value));
-  // the email(field) value from the submitted form
-  $form_mail_value = $form['email']['#value'];
-  // dprint_r($form_date_value);
-  // dprint_r($form_mail_value); die;
+  // Convert date format to "Y-m-d".
+  $form_date_value = date('Y-m-d', strtotime($values['date']));
 
+  // The email value.
+  $form_mail_value = $values['email'];
 
-
-  // 2- Getting nodes
-  // load all nodes
-  $load_nodes = node_load_multiple(array(), array('type' => array(
+  // Load all nodes of defined type.
+  $nodes = node_load_multiple(array(), array('type' => array(
     'before_activity',
     'malmo_stadsteater',
     'malmo_opera',
     'skanes_dansteater',
     'after_activity',
-    )));
+  )));
 
-  // All performances dates
-  $all_performances_dates = array();
-  // All performances nids matched with the wished date($form_date_value)
-  $all_matched_performances_nids = array();
 
-  // Bifore Activity node ids
-  $before_activity_nids = array();
-  // After Activity node ids
-  $after_activity_nids = array();
-  // Malmo Stadsteater node ids
-  $malmo_stadsteater_nids = array();
-  // Malmo Opera node ids
-  $malmo_opera_nids = array();
-  // Skanes Dansteater node ids
-  $skanes_dansteater_nids = array();
+  // Loop all nodes.
+  foreach ($nodes as $node) {
+    // Wrapp node object.
+    $wrapper = entity_metadata_wrapper('node', $node);
 
-  // loop throw all nodes
-  foreach ($load_nodes as $load_node) {
-    // Getting all perfomances dates
-    $malmo_stadsteater_dates = substr($load_node->field_malmo_stadsteater_date['sv'][0]['value'], 0, 10);
-    $malmo_opera_dates = substr($load_node->field_malmo_opera_date['sv'][0]['value'], 0, 10);
-    $skanes_dansteater_dates = substr($load_node->field_skanes_dansteater_date['sv'][0]['value'], 0, 10);
-    // push the result(dates) to  $all_performances_dates array
-    if ($malmo_stadsteater_dates) {
-      $all_performances_dates[] = $malmo_stadsteater_dates;
-      // array_push($all_performances_dates, $malmo_stadsteater_dates);
-    }elseif ($malmo_opera_dates) {
-      $all_performances_dates[] = $malmo_opera_dates;
-      // array_push($all_performances_dates, $malmo_opera_dates);
-    }elseif ($skanes_dansteater_dates) {
-      $all_performances_dates[] = $skanes_dansteater_dates;
-      // array_push($all_performances_dates, $skanes_dansteater_dates);
-    }
+    // Get all perfomances for malmo stadsteater.
+    if (isset($wrapper->field_malmo_stadsteater_date)) {
+      $malmo_stadsteater_dates = format_date($wrapper->field_malmo_stadsteater_date->value(), 'custom', 'Y-m-d');
 
-    // Getting all node ids
-    // Getting node ids(nid) of type before_activity
-    if ($load_node->type == 'before_activity') {
-      // dprint_r($load_node->nid);
-      // var_dump($load_node->nid);
-      $before_activity_nid = $load_node->nid;
-      $before_activity_nids[] = $before_activity_nid;
-      // array_push($before_activity_nids, $before_activity_nid);
-    }
-    // Getting node ids(nid) of type after_activity
-    if ($load_node->type == 'after_activity') {
-      // dprint_r($load_node->nid);
-      // var_dump($load_node->nid);
-      $after_activity_nid = $load_node->nid;
-      $after_activity_nids[] = $after_activity_nid;
-      // array_push($after_activity_nids, $after_activity_nid);
-
-    }
-    // Getting node ids(nid) of type malmo_stadsteater
-    if ($load_node->type == 'malmo_stadsteater') {
-        // dprint_r($form_date_value);
-        // dprint_r($malmo_stadsteater_dates);
+      // Store all matching dates.
       if ($malmo_stadsteater_dates === $form_date_value) {
-        // dprint_r($load_node->nid);
-        $malmo_stadsteater_nid = $load_node->nid;
-        $malmo_stadsteater_nids[] = $malmo_stadsteater_nid;
-        // array_push($malmo_stadsteater_nids, $malmo_stadsteater_nid);
-        $all_matched_performances_nids[] = $malmo_stadsteater_nid;
-        // array_push($all_matched_performances_nids, $malmo_stadsteater_nid);
+        $all_matched_performances_nids[] = $node->nid;
       }
 
+      // Store all performance dates.
+      $all_performances_dates[] = $malmo_stadsteater_dates;
     }
-    // Getting node ids(nid) of type malmo_opera
-    if ($load_node->type == 'malmo_opera') {
-      // dprint_r($load_node->nid);      
+
+    // Get all perfomances for malmo opera.
+    if (isset($wrapper->field_malmo_opera_date)) {
+      $malmo_stadsteater_dates = format_date($wrapper->field_malmo_opera_date->value(), 'custom', 'Y-m-d');
+
+      // Store all matching dates.
       if ($malmo_opera_dates === $form_date_value) {
-        // var_dump($load_node->nid);
-        $malmo_opera_nid = $load_node->nid;
-        $malmo_opera_nids[] = $malmo_opera_nid;
-        // array_push($malmo_opera_nids, $malmo_opera_nid);
-        $all_matched_performances_nids[] = $malmo_opera_nid;
-        // array_push($all_matched_performances_nids, $malmo_opera_nid);
+        $all_matched_performances_nids[] = $node->nid;
+
       }
+
+      // Store all performance dates.
+      $all_performances_dates[] = $malmo_opera_dates;
     }
-    // Getting node ids(nid) of type skanes_dansteater
-    if ($load_node->type == 'skanes_dansteater') {
-      // dprint_r($load_node->nid);
-      // var_dump($load_node->nid);
+
+    // Get all perfomances for skanes dansteater.
+    if (isset($wrapper->skanes_dansteater_dates)) {
+      $malmo_stadsteater_dates = format_date($wrapper->skanes_dansteater_dates->value(), 'custom', 'Y-m-d');
+
+      // Store all matching dates.
       if ($skanes_dansteater_dates === $form_date_value) {
-        $skanes_dansteater_nid = $load_node->nid;
-        $skanes_dansteater_nids[] = $skanes_dansteater_nid;
-        // array_push($skanes_dansteater_nids, $skanes_dansteater_nid);
-        $all_matched_performances_nids[] = $skanes_dansteater_nid;
-        // array_push($all_matched_performances_nids, $skanes_dansteater_nid);
+        $all_matched_performances_nids[] = $node->nid;
       }
 
+      // Store all performance dates.
+      $all_performances_dates[] = $skanes_dansteater_dates;
     }
-  }
-  // var_dump($form_date_value);
-  // var_dump($all_performances_dates);
-  // var_dump($before_activity_nids);
-  // var_dump($after_activity_nids);
-  // var_dump($malmo_stadsteater_nids);
-  // var_dump($malmo_opera_nids);
-  // var_dump($skanes_dansteater_nids);
-  // var_dump($all_matched_performances_nids);
-  // dprint_r($all_matched_performances_nids);
 
-  // die;
+    // Getting node ids(nid) of type before_activity
+    if ($node->type == 'before_activity') {
+      $before_activity_nids[] = $node->nid;
+    }
 
-
-
-  // return error message if there is no performance matched with the wished date.
-  if (!in_array($form_date_value, $all_performances_dates)) {
-    echo 'The date is not matching!!!!!!!!!!';
-    drupal_set_message($form_date_value);
-    drupal_set_message(t('Oops! We could not found a performance in ' . $form_date_value . '.'), 'error');
-    return;
+    // Getting node ids(nid) of type after_activity
+    if ($node->type == 'after_activity') {
+      $after_activity_nids[] = $node->nid;
+    }
   }
     
   drupal_set_message($form_date_value);
@@ -275,33 +203,20 @@ function the_date_generator_form_submit($form, &$form_state) {
   $random_before_activity_nid_keys = array_rand($before_activity_nids, 2);
   $random_before_activity_nid_one = $before_activity_nids[$random_before_activity_nid_keys[0]];
   $random_before_activity_nid_two = $before_activity_nids[$random_before_activity_nid_keys[1]];
-  // var_dump($before_activity_nids);
-  // var_dump($random_before_activity_nid_keys);
-  // var_dump($random_before_activity_nid_one);
-  // var_dump($random_before_activity_nid_two);
+
 
   // Randomly get one nid from $all_matched_performances_nids
   $random_performance_nid_key = array_rand($all_matched_performances_nids, 1);
   $random_performance_nid = $all_matched_performances_nids[$random_performance_nid_key];
-  // var_dump($all_matched_performances_nids);
-  // var_dump($random_performance_nid_key);
-  // var_dump($random_performance_nid);
+
 
   // Randomly getting nids from $after_activity_nids
   $random_after_activity_nid_keys = array_rand($after_activity_nids, 2);
   $random_after_activity_nid_one = $after_activity_nids[$random_after_activity_nid_keys[0]];
   $random_after_activity_nid_two = $after_activity_nids[$random_after_activity_nid_keys[1]];
-  // var_dump($after_activity_nids);
-  // var_dump($random_after_activity_nid_keys);
-  // var_dump($random_after_activity_nid_one);
-  // var_dump($random_after_activity_nid_two);
 
-  // die;
+
+  // Send mail.
+
 
 }
-
-
-
-
-
-
