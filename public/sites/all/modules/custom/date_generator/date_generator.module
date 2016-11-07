@@ -209,27 +209,42 @@ function the_date_generator_form_submit(&$form, &$form_state) {
    * Implementation of hook_mail().
    */
   function date_generator_mail($key, &$message, $params) {
+    // var_dump($message); die;
     switch ($key){
       case 'malmoscenen_email':
       // Set headers
-      $message['to'] = 'm_ali1426@hotmail.com';
-      $message['subject'] = t('Testing Malmoscenen email');
+      $message['subject'] = t('The Dream Evening!');
       // Set body
-      $message['body'][] = t('Malmoscenen-email date_generator is working');
+      // $message['body'][] = t('Malmoscenen-email date_generator is working');
+      $message['body'][] = theme('date_generator_mail_template', array('message' => t('Malmoscenen-email date_generator is working')));
       break;
     }
 
   }
 
+  /**
+   * Implementation of hook_theme().
+   */
+  function date_generator_theme() {
+    $path = drupal_get_path('module', 'date_generator' . '/templates');
+    return array(
+      'date_generator_mail_template' => array(
+        'template' => 'date_generator_mail_template_file',
+        'arguments' => array('message' => ''),
+        'path' => $path,
+      ),
+    );
+  }
+
   // Send email.
   $module = 'date_generator';
   $key = 'malmoscenen_email';
-  $from = 'mohammed.ali.aziz@oddhill.se';
-  drupal_mail($module, $key, $to, $language, $params = array(), $from, $send = TRUE);
+  $to = $form_email_value;
+  drupal_mail($module, $key, $to, $language, $params = array(), $from = NULL, $send = TRUE);
 
 
 
-
+  drupal_set_message('The email was sent to ' . $form_email_value);
 
 
 
