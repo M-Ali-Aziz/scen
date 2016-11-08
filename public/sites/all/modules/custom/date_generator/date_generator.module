@@ -189,74 +189,58 @@ function the_date_generator_form_submit(&$form, &$form_state) {
   drupal_set_message($form_date_value);
   drupal_set_message(t('COOL! the date is matching.'));
 
+
   // Get random nids
   // Randomly getting two nids from $before_activity_nids
-  $random_before_activity_nid_keys = array_rand($before_activity_nids, 2);
-  $random_before_activity_nid_one = $before_activity_nids[$random_before_activity_nid_keys[0]];
-  $random_before_activity_nid_two = $before_activity_nids[$random_before_activity_nid_keys[1]];
+  $keys = array_rand($before_activity_nids, 2);
+
+  foreach (array_rand($before_activity_nids, 2) as $key) {
+    $activity_nids['before'][] = $before_activity_nids[$key];
+  }
+
 
   // Randomly get one nid from $all_matched_performances_nids
-  $random_performance_nid_key = array_rand($all_matched_performances_nids, 1);
-  $random_performance_nid = $all_matched_performances_nids[$random_performance_nid_key];
+  $activity_nids['performance'] = $all_matched_performances_nids[array_rand($all_matched_performances_nids, 1)];
  
   // Randomly getting nids from $after_activity_nids
-  $random_after_activity_nid_keys = array_rand($after_activity_nids, 2);
-  $random_after_activity_nid_one = $after_activity_nids[$random_after_activity_nid_keys[0]];
-  $random_after_activity_nid_two = $after_activity_nids[$random_after_activity_nid_keys[1]];
+  foreach (array_rand($after_activity_nids, 2) as $key) {
+    $activity_nids['after'][] = $after_activity_nids[$key];
+  }
 
-  
-  /**
-   * Implementation of hook_mail().
-   */
-  function date_generator_mail($key, &$message, $params) {
-    // var_dump($message); die;
-    switch ($key){
-      case 'malmoscenen_email':
-      // Set headers
-      $message['subject'] = t('The Dream Evening!');
-      // Set body
-      // $message['body'][] = t('Malmoscenen-email date_generator is working');
-      $message['body'][] = theme('date_generator_mail_template', array('message' => t('Malmoscenen-email date_generator is working')));
-      break;
+
+  drupal_mail('date_generator', 'date_email', $form_email_value, 'sv', $activity_nids);
+
+
+}
+
+/**
+ * Implementation of hook_mail().
+ */
+function date_generator_mail($key, &$message, $params) {
+  switch ($key){
+    case 'date_email':
+    // Set headers
+    $message['headers']['Content-Type'] = 'text/html; charset=UTF-8; format=flowed';
+
+    // Set Subject
+    $message['subject'] = t('The Dream Evening!');
+
+    // Add before performance nodes.
+    foreach ($params['before'] as $before_nid) {
+      $before_node = node_view(node_load($before_nid), 'teaser');
+      $message['body'][] = render($before_node);
     }
 
+    // Add performance node.
+    $performance_node = node_view(node_load($params['performance']), 'teaser');
+    $message['body'][] = render($performance_node);
+
+    // Add after performance nodes.
+    foreach ($params['after'] as $after_nid) {
+      $after_node = node_view(node_load($after_nid), 'teaser');
+      $message['body'][] = render($after_node);
+    }
+    break;
   }
-
-  /**
-   * Implementation of hook_theme().
-   */
-  function date_generator_theme() {
-    $path = drupal_get_path('module', 'date_generator' . '/templates');
-    return array(
-      'date_generator_mail_template' => array(
-        'template' => 'date_generator_mail_template_file',
-        'arguments' => array('message' => ''),
-        'path' => $path,
-      ),
-    );
-  }
-
-  // Send email.
-  $module = 'date_generator';
-  $key = 'malmoscenen_email';
-  $to = $form_email_value;
-  drupal_mail($module, $key, $to, $language, $params = array(), $from = NULL, $send = TRUE);
-
-
-
-  drupal_set_message('The email was sent to ' . $form_email_value);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
