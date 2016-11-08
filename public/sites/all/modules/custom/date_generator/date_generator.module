@@ -192,25 +192,22 @@ function the_date_generator_form_submit(&$form, &$form_state) {
 
   // Get random nids
   // Randomly getting two nids from $before_activity_nids
-  $keys = array_rand($before_activity_nids, 2);
-
   foreach (array_rand($before_activity_nids, 2) as $key) {
     $activity_nids['before'][] = $before_activity_nids[$key];
   }
 
-
   // Randomly get one nid from $all_matched_performances_nids
   $activity_nids['performance'] = $all_matched_performances_nids[array_rand($all_matched_performances_nids, 1)];
  
-  // Randomly getting nids from $after_activity_nids
+  // Randomly get two nids from $after_activity_nids
   foreach (array_rand($after_activity_nids, 2) as $key) {
     $activity_nids['after'][] = $after_activity_nids[$key];
   }
 
-
+  // Send email
   drupal_mail('date_generator', 'date_email', $form_email_value, 'sv', $activity_nids);
 
-
+  drupal_set_message('The email was sent to ' . $form_email_value);
 }
 
 /**
