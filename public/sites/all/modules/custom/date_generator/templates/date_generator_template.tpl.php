@@ -1,7 +1,10 @@
 <div class="before-events">
-  <?php foreach($before_nodes as $before_node): ?>
-    <?php print render($before_node); ?>
-  <?php endforeach; ?>
+  <div class="before-event-one">
+    <?php print render($before_nodes[0]); ?> 
+  </div>
+  <div class="before-event-two">
+    <?php print render($before_nodes[1]); ?>
+  </div>
 </div>
 
 <div class="performance">
@@ -9,7 +12,10 @@
 </div>
 
 <div class="after-events">
-  <?php foreach($after_nodes as $after_node): ?>
-    <?php print render($after_node); ?>
-  <?php endforeach; ?>
+  <div class="after-events-one">
+    <?php print render($after_nodes[0]); ?>
+  </div>
+  <div class="after-events-two">
+    <?php print render($after_nodes[1]); ?>
+  </div>
 </div>
