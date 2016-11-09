@@ -244,7 +244,6 @@ function date_generator_mail($key, &$message, $params) {
     );
     break;
   }
-
 }
 
 /**
@@ -258,15 +257,13 @@ function date_generator_theme($existing, $type, $theme, $path) {
       'template' => 'date_generator_template',
       'variables' => array(
         'before_nodes' => array(),
-        'performance' => '',
+        'performance' => NULL,
         'after_nodes' => array(),
       ),
       'path' => $path,
     ),
   );
 }
-
-
 
 
 
