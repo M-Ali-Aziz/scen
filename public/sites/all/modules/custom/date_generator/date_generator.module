@@ -199,10 +199,8 @@ function the_date_generator_form_submit(&$form, &$form_state) {
   // Randomly get one nid from $all_matched_performances_nids
   $activity_nids['performance'] = $all_matched_performances_nids[array_rand($all_matched_performances_nids, 1)];
 
-  // Randomly get two nids from $after_activity_nids
-  foreach (array_rand($after_activity_nids, 2) as $key) {
-    $activity_nids['after'][] = $after_activity_nids[$key];
-  }
+  // Randomly get one nid from $after_activity_nids
+  $activity_nids['after'] = $after_activity_nids[array_rand($after_activity_nids, 1)];
 
   // Send email
   drupal_mail('date_generator', 'date_email', $form_email_value, 'sv', $activity_nids);
@@ -230,16 +228,14 @@ function date_generator_mail($key, &$message, $params) {
     // Add performance node.
     $performance_node = node_view(node_load($params['performance']), 'teaser');
 
-    // Add after performance nodes.
-    foreach ($params['after'] as $after_nid) {
-      $after_nodes[] = node_view(node_load($after_nid), 'teaser');
-    }
+    // Add after performance node.
+    $after_node = node_view(node_load($params['after']), 'teaser');
 
     // Set body
     $message['body'][] = theme('date_generator_template', array(
       'before_nodes' => $before_nodes,
       'performance' => $performance_node,
-      'after_nodes' => $after_nodes,
+      'after_node' => $after_node,
       )
     );
     break;
@@ -258,7 +254,7 @@ function date_generator_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'before_nodes' => array(),
         'performance' => NULL,
-        'after_nodes' => array(),
+        'after_node' => array(),
       ),
       'path' => $path,
     ),
