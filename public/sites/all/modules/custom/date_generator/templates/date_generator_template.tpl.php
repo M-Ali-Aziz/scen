@@ -9,34 +9,70 @@
 .main-mail-template-wrapper {
   background: gray;
 }
+
+table {
+  border: 1px solid red;
+}
   
 </style><!-- Style end! -->
 
+<!-- Email content -->
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+  <tr>
+    <td align="center" valign="top">
+      <table border="0" cellpadding="20" cellspacing="0" width="960">
+        <!-- Before activity one  -->
+        <tr>
+          <td align="right">
+            <table border="0" width="400">
+              <tr>
+                <td align="left">
+                  <?php print render($before_nodes[0]); ?>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- Before activity two -->
+        <tr>
+          <td align="left">
+            <table border="0" width="400">
+              <tr>
+                <td align="left">
+                  <?php print render($before_nodes[1]); ?>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- The performance -->
+        <tr>
+          <td align="right">
+            <table border="0" width="400">
+              <tr>
+                <td align="left">
+                  <?php print render($performance); ?>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- After activity -->
+        <tr>
+          <td align="left">
+            <table border="0" width="400">
+              <tr>
+                <td align="left">
+                  <?php print render($after_node); ?>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
 
-
-<!-- Content -->
-<dir class="main-mail-template-wrapper">
-  <div class="before-events">
-    <div class="before-event-one">
-      <?php print render($before_nodes[0]); ?> 
-    </div>
-    <div class="before-event-two">
-      <?php print render($before_nodes[1]); ?>
-    </div>
-  </div>
-
-  <div class="performance">
-    <?php print render($performance); ?>
-  </div>
-
-  <div class="after-events">
-    <div class="after-events-one">
-      <?php print render($after_nodes[0]); ?>
-    </div>
-    <div class="after-events-two">
-      <?php print render($after_nodes[1]); ?>
-    </div>
-  </div>
-</dir>
+      </table>
+    </td>
+  </tr>
+</table>
 
 
