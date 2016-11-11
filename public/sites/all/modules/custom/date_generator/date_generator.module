@@ -236,6 +236,7 @@ function date_generator_mail($key, &$message, $params) {
       'before_nodes' => $before_nodes,
       'performance' => $performance_node,
       'after_node' => $after_node,
+      'image_path' => $base_url . '/' . drupal_get_path('module', 'date_generator') . '/images',
       )
     );
     break;
@@ -255,6 +256,7 @@ function date_generator_theme($existing, $type, $theme, $path) {
         'before_nodes' => array(),
         'performance' => NULL,
         'after_node' => array(),
+        'image_path' => NULL,
       ),
       'path' => $path,
     ),
