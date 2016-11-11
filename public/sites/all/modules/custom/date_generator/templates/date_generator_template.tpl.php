@@ -1,13 +1,36 @@
 <?php
 /**
   * @file Email Template file for Date Generator module
-  */ 
+  */
 ?>
 
 <!-- Style -->
 <style>
-.main-mail-template-wrapper {
-  background: gray;
+/*.main-email-wrapper {
+  background-image: url(<?php print($image_path) .  "/mapbg.jpg"?>);
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+.main-email-wrapper {
+  background-color: #f2f2f2;
+}
+
+.email-content-wrapper {
+  width: 960px;
+}
+
+.content-holder {
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+.content-holder h2,p{
+  margin: 0;
+}
+
+.the-performance {
+  padding: 10px;
 }
 
 table {
@@ -17,14 +40,14 @@ table {
 </style><!-- Style end! -->
 
 <!-- Email content -->
-<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+<table height="100%" width="100%" class="main-email-wrapper">
   <tr>
-    <td align="center" valign="top">
-      <table border="0" cellpadding="20" cellspacing="0" width="960">
+    <td align="center">
+      <table class="email-content-wrapper">
         <!-- Before activity one  -->
         <tr>
           <td align="right">
-            <table border="0" width="400">
+            <table width="400" class="content-holder before-activity-one">
               <tr>
                 <td align="left">
                   <?php print render($before_nodes[0]); ?>
@@ -36,7 +59,7 @@ table {
         <!-- Before activity two -->
         <tr>
           <td align="left">
-            <table border="0" width="400">
+            <table width="400" class="content-holder before-activity-two">
               <tr>
                 <td align="left">
                   <?php print render($before_nodes[1]); ?>
@@ -48,7 +71,7 @@ table {
         <!-- The performance -->
         <tr>
           <td align="right">
-            <table border="0" width="400">
+            <table width="400" class="content-holder the-performance">
               <tr>
                 <td align="left">
                   <?php print render($performance); ?>
@@ -60,7 +83,7 @@ table {
         <!-- After activity -->
         <tr>
           <td align="left">
-            <table border="0" width="400">
+            <table width="400" class="content-holder after_activity">
               <tr>
                 <td align="left">
                   <?php print render($after_node); ?>
