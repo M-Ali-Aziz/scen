@@ -29,7 +29,8 @@
   margin: 0;
   color: #000;
 }
-.content-holder h2{
+.content-holder h2
+{
   line-height: 24px;
   font-size: 16px;
 }
@@ -44,6 +45,41 @@
 
 .the-performance {
   padding: 10px;
+}
+.content-holder .field-malmo-stadsteater-time,
+.field-malmo-opera-time,
+.field-skanes-dansteater-time
+{
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.the-performance .field-malmo-stadsteater-img,
+.field-malmo-opera-img,
+.field-skanes-dansteater-image
+{
+  float: left;
+  margin-right: 10px;
+}
+.the-performance .field-malmo-stadsteater-img img,
+.field-malmo-opera-img img,
+.field-skanes-dansteater-image img
+{
+  max-width: 140px;
+  max-height: 250px;
+}
+.the-performance .field-malmo-stadsteater-logo,
+.field-malmo-opera-logo,
+.field-skanes-dansteater-logo
+{
+  margin-bottom: 10px;
+}
+.the-performance .field-malmo-stadsteater-logo img,
+.field-malmo-opera-logo img,
+.field-skanes-dansteater-logo img
+{
+  max-width: 200px;
+  max-height: 40px;
 }
 
 table {
