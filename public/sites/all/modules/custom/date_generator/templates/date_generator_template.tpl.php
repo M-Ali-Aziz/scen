@@ -21,12 +21,25 @@
 
 .content-holder {
   background-color: white;
-  border: 1px solid gray;
+  border: 2px solid gray;
   border-radius: 20px;
   padding: 20px 40px;
 }
 .content-holder h2,p{
   margin: 0;
+  color: #000;
+}
+.content-holder h2{
+  line-height: 24px;
+  font-size: 16px;
+}
+.content-holder p{
+  line-height: 20px;
+  font-size: 14px;
+}
+.content-holder a{
+  color:#f44e85;
+  text-decoration: underline;
 }
 
 .the-performance {
