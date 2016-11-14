@@ -26,19 +26,18 @@
   border: 2px solid #C0C0C0; /* rgba(0,0,0,0.2) */
   border-radius: 20px;
   padding: 20px 40px;
+  margin: 10px 0;
+  color: #000;
+  line-height: 20px;
+  font-size: 14px;
 }
 .content-holder h2,p{
   margin: 0;
-  color: #000;
 }
 .content-holder h2
 {
   line-height: 24px;
   font-size: 16px;
-}
-.content-holder p{
-  line-height: 20px;
-  font-size: 14px;
 }
 .content-holder a{
   color:#f44e85;
@@ -94,6 +93,18 @@
   margin: 10px 0;
   
 }
+/*.the-performance .field-malmo-stadsteater-booking,
+.field-malmo-opera-booking,
+.field-skanes-dansteater-booking,
+.field-malmo-stadsteater-facebook,
+.field-malmo-opera-facebook,
+.field-skanes-dansteater-facebook,
+.field-malmo-stadsteater-insta,
+.field-malmo-opera-insta,
+.field-skanes-dansteater-instagram
+{
+  display: inline-block;
+}*/
 .the-performance .field-malmo-stadsteater-booking,
 .field-malmo-opera-booking,
 .field-skanes-dansteater-booking
@@ -117,8 +128,6 @@
 
 
 /* Styling elements/conrent comming from the theme templates */
-
-
 
 table {
   border: 1px solid red;
