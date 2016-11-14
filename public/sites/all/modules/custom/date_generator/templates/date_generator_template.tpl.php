@@ -4,24 +4,26 @@
   */
 ?>
 
+<?php
+/**
+  * Note!!!
+  * Some of the classes are from the theme.
+  */
+?>
+
 <!-- Style -->
 <style>
-/*.main-email-wrapper {
-  background-image: url(<?php print($image_path) .  "/mapbg.jpg"?>);
-  background-repeat: no-repeat;
-  background-size: cover;
-}*/
 .main-email-wrapper {
-  background-color: #f2f2f2;
+  background: #f2f2f2;
 }
 
 .email-content-wrapper {
-  width: 960px;
+  width: 600px;
 }
 
 .content-holder {
   background-color: white;
-  border: 2px solid gray;
+  border: 2px solid #C0C0C0; /* rgba(0,0,0,0.2) */
   border-radius: 20px;
   padding: 20px 40px;
 }
@@ -45,6 +47,9 @@
 
 .the-performance {
   padding: 10px;
+}
+.the-performance h2{
+  text-transform: uppercase;
 }
 .content-holder .field-malmo-stadsteater-time,
 .field-malmo-opera-time,
@@ -82,6 +87,39 @@
   max-height: 40px;
 }
 
+.the-performance .field-malmo-stadsteater-address,
+.field-malmo-opera-address,
+.field-skanes-dansteater-address
+{
+  margin: 10px 0;
+  
+}
+.the-performance .field-malmo-stadsteater-booking,
+.field-malmo-opera-booking,
+.field-skanes-dansteater-booking
+{
+  width: 100px;
+  height: 40px;
+  background: #007236;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 40px;
+  display: inline-block;
+}
+.the-performance .field-malmo-stadsteater-booking a,
+.field-malmo-opera-booking a,
+.field-skanes-dansteater-booking a
+{
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+/* Styling elements/conrent comming from the theme templates */
+
+
+
 table {
   border: 1px solid red;
 }
@@ -95,7 +133,7 @@ table {
       <table class="email-content-wrapper">
         <!-- Before activity one  -->
         <tr>
-          <td align="right">
+          <td align="center">
             <table width="400" class="content-holder before-activity-one">
               <tr>
                 <td align="left">
@@ -107,7 +145,7 @@ table {
         </tr>
         <!-- Before activity two -->
         <tr>
-          <td align="left">
+          <td align="center">
             <table width="400" class="content-holder before-activity-two">
               <tr>
                 <td align="left">
@@ -119,7 +157,7 @@ table {
         </tr>
         <!-- The performance -->
         <tr>
-          <td align="right">
+          <td align="center">
             <table width="400" class="content-holder the-performance">
               <tr>
                 <td align="left">
@@ -131,7 +169,7 @@ table {
         </tr>
         <!-- After activity -->
         <tr>
-          <td align="left">
+          <td align="center">
             <table width="400" class="content-holder after_activity">
               <tr>
                 <td align="left">
