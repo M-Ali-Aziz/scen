@@ -263,6 +263,10 @@ function date_generator_theme($existing, $type, $theme, $path) {
   );
 }
 
+/**
+ * Add css
+ */
+drupal_add_css(drupal_get_path('module', 'date_generator') . '/css/date-generator-styles.css', array('every_page' => TRUE));
 
 
 
