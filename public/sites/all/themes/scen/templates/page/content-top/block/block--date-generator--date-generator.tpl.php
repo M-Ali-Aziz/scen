@@ -21,14 +21,16 @@
  */
 ?>
 <div class="<?php print $block_html_id; ?> date-generator-wrapper" <?php print $attributes; ?>>
-  <?php if ($block->subject): ?>
-    <h1<?php print $title_attributes; ?>><?php print $block->subject ?></h1>
-  <?php endif;?>
+  <div class="date-generator-content-wrapper">
+    <?php if ($block->subject): ?>
+      <h1<?php print $title_attributes; ?>><?php print $block->subject ?></h1>
+    <?php endif;?>
 
-  <p>Create a very, very wonderful evening, customized just for you! *</p>
+    <p>Create a very, very wonderful evening,<br> customized just for you! *</p>
 
-  <?php print $content ?>
+    <?php print $content ?>
 
-  <p>(*Culture is for all)</p>
+    <p>(*Culture is for all)</p>
+  </div>
 
 </div>
