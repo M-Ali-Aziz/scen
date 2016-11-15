@@ -453,6 +453,19 @@ body {
   height: 15px;
   z-index: 1; }
 
+/* Date field calendar*/
+#ui-datepicker-div {
+  border: none;
+  border-radius: 20px;
+  width: 520px;
+  left: 0px; }
+
+#ui-datepicker-div a span {
+  display: none; }
+
+#ui-datepicker-div table td {
+  padding-right: 30px; }
+
 .page-main-wrapper {
   width: 100%; }
 
@@ -501,3 +514,7 @@ button:focus {
   color: #FFF;
   text-transform: uppercase;
   padding: 0; }
+
+/* Date field calendar*/
+#ui-datepicker-div {
+  font-family: 'Roboto', sans-serif; }

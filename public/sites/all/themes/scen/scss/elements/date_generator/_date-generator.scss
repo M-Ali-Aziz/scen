@@ -65,8 +65,19 @@
   z-index: 1;
 }
 
-
-
+/* Date field calendar*/
+#ui-datepicker-div {
+  border: none;
+  border-radius: 20px;
+  width: 520px;
+  left: 0px;
+}
+#ui-datepicker-div a span{
+  display: none;
+}
+#ui-datepicker-div table td{
+  padding-right: 30px;
+}
 
 
 
