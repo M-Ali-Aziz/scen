@@ -7,7 +7,7 @@
 <?php
 /**
   * Note!!!
-  * Some of the classes are from the theme.
+  * Some of the classes are from the theme templates.
   */
 ?>
 
@@ -23,7 +23,7 @@
 
 .content-holder {
   background-color: white;
-  border: 2px solid #C0C0C0; /* rgba(0,0,0,0.2) */
+  border: 2px solid #C0C0C0;
   border-radius: 20px;
   padding: 20px 40px;
   margin: 10px 0;
@@ -126,13 +126,6 @@
   text-decoration: none;
 }
 
-
-/* Styling elements/conrent comming from the theme templates */
-
-table {
-  border: 1px solid red;
-}
-  
 </style><!-- Style end! -->
 
 <!-- Email content -->
