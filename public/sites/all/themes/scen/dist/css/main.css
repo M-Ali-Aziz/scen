@@ -392,13 +392,13 @@ body {
   height: 100%; }
 
 .date-generator-content-wrapper {
+  position: relative;
   max-width: 600px;
   background: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: 100px auto;
   padding: 40px; }
 
-/* Date field */
 .date-generator-content-wrapper input {
   width: 520px;
   height: 60px;
@@ -421,6 +421,37 @@ body {
 
 .date-generator-content-wrapper .form-submit:active {
   box-shadow: none; }
+
+/* icons */
+.date-icon {
+  background: url("../../graphics/date_generator/calendar.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/date_generator/calendar.svg") transparent 0 0 no-repeat;
+  position: absolute;
+  top: 177px;
+  left: 60px;
+  width: 35px;
+  height: 35px;
+  z-index: 1; }
+
+.mail-icon {
+  background: url("../../graphics/date_generator/mail.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/date_generator/mail.svg") transparent 0 0 no-repeat;
+  position: absolute;
+  top: 250px;
+  left: 60px;
+  width: 35px;
+  height: 35px;
+  z-index: 1; }
+
+.arrow-icon {
+  background: url("../../graphics/date_generator/arrow_down.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/date_generator/arrow_down.svg") transparent 0 0 no-repeat;
+  position: absolute;
+  top: 193px;
+  right: 75px;
+  width: 15px;
+  height: 15px;
+  z-index: 1; }
 
 .page-main-wrapper {
   width: 100%; }
@@ -463,8 +494,10 @@ button:focus {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   font-size: 20px;
-  color: #000; }
+  color: #000;
+  padding-left: 70px; }
 
 .date-generator-content-wrapper .form-submit {
   color: #FFF;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding: 0; }

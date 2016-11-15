@@ -22,6 +22,9 @@
 ?>
 <div class="<?php print $block_html_id; ?> date-generator-wrapper" <?php print $attributes; ?>>
   <div class="date-generator-content-wrapper">
+    <div class="date-icon"></div>
+    <div class="mail-icon"></div>
+    <div class="arrow-icon"></div>
     <?php if ($block->subject): ?>
       <h1<?php print $title_attributes; ?>><?php print $block->subject ?></h1>
     <?php endif;?>
