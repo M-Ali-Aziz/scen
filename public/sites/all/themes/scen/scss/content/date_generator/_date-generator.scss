@@ -1,3 +1,38 @@
-.date-generator-wrapper .description {
+.date-generator-content-wrapper .description {
   display: none;
+}
+
+.date-generator-content-wrapper h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+}
+
+.date-generator-content-wrapper p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+  margin: 0 0 20px 0;
+}
+.date-generator-content-wrapper p:last-child {
+  font-size: 12px;
+  margin: 0;
+}
+
+
+.date-generator-content-wrapper input {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  color: #000;
+}
+
+.date-generator-content-wrapper .form-submit {
+  color: #FFF;
+  text-transform: uppercase;
 }

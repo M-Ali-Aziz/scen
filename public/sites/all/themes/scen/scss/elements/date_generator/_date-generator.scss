@@ -1,9 +1,37 @@
 .date-generator-wrapper {
-  background: red;
-  padding: 200px;
-  text-align: center;
+  height: 100%;
 }
 
-.date-generator-wrapper h1 {
-  margin-top: 0;
+.date-generator-content-wrapper {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin: 100px auto;
+  padding: 40px;
+}
+
+/* Date field */
+.date-generator-content-wrapper input {
+  width: 520px;
+  height: 60px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 0 0 10px 0;
+}
+
+.date-generator-content-wrapper .container-inline-date input {
+  width: 520px;
+  height: 60px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.date-generator-content-wrapper .form-submit {
+  margin-bottom: 20px;
+  background: #f44e85;
+  border: none;
+  height: 100px;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+}
+.date-generator-content-wrapper .form-submit:active {
+  box-shadow: none;
 }
