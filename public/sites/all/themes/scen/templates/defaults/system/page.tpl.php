@@ -16,7 +16,11 @@
  * @see template_process()
  */
 ?>
-<?php print render($page['header']); ?>
-<?php print render($page['content-top']); ?>
-<?php print render($page['content']); ?>
-<?php print render($page['footer']); ?>
+<div class="page-main-wrapper">
+  <div class="page-top-wrapper">
+    <?php print render($page['header']); ?>
+    <?php print render($page['content-top']); ?>
+  </div>
+  <?php print render($page['content']); ?>
+  <?php print render($page['footer']); ?>
+</div>
