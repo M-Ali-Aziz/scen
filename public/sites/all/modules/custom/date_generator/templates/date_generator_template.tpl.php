@@ -43,12 +43,17 @@
   color:#f44e85;
   text-decoration: underline;
 }
+.content-holder:not(.the-performance) td div div:last-child{
+  font-style: italic;
+}
 
 .the-performance {
   padding: 10px;
 }
 .the-performance h2{
   text-transform: uppercase;
+}.the-performance td div:nth-child(6){
+  font-style: italic;
 }
 .content-holder .field-malmo-stadsteater-time,
 .field-malmo-opera-time,
