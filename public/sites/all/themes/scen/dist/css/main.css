@@ -478,7 +478,17 @@ button:focus {
 .page-top-wrapper {
   background: url("./../../graphics/page/temporarybg.jpg");
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(#f8a9c5, #67e4ff);
+  opacity: .2; }
 
 .date-generator-content-wrapper .description {
   display: none; }

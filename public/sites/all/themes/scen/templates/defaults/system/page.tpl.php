@@ -18,6 +18,7 @@
 ?>
 <div class="page-main-wrapper">
   <div class="page-top-wrapper">
+  <div class="overlay"></div>
     <?php print render($page['header']); ?>
     <?php print render($page['content-top']); ?>
   </div>
