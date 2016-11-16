@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * providing a simple block for footer.
+ */
+
+/**
+ * Implementation of hook_block_info().
+ */
+function footer_block_block_info() {
+  $blocks = array();
+  $blocks['footer_block'] = array(
+    'info' => t('Footer Block'),
+    'region' => 'footer',
+    'status' => TRUE,
+    'visidility' => BLOCK_VISIBILITY_LISTED,
+    'page' => variable_get('site_frontpage', NULL),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implementation of hook_block_view().
+ */
+function footer_block_block_view($delta = '') {
+  $block = array();
+  switch($delta) {
+    case 'footer_block':
+    $block['content'] = t('Your guides in Malmö night:');
+    break;
+  }
+
+  return $block;
+}

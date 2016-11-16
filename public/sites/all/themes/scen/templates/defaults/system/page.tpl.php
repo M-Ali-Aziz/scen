@@ -23,5 +23,7 @@
     <?php print render($page['content-top']); ?>
   </div>
   <?php print render($page['content']); ?>
-  <?php print render($page['footer']); ?>
+  <div class="footer-main-wrapper">
+    <?php print render($page['footer']); ?>
+  </div>
 </div>
