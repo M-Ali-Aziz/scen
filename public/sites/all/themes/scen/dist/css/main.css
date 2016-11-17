@@ -396,7 +396,7 @@ body {
   max-width: 600px;
   background: rgba(255, 255, 255, 0.6);
   text-align: center;
-  margin: 100px auto;
+  margin: 100px auto 0 auto;
   padding: 40px; }
 
 .date-generator-content-wrapper input {
@@ -477,7 +477,12 @@ button:focus {
   background: url("./../../graphics/page-top/temporarybg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  padding-bottom: 100px; }
+
+.block-blockify-blockify-logo {
+  max-width: 300px;
+  padding: 50px 0 0 50px; }
 
 .overlay {
   width: 100%;
