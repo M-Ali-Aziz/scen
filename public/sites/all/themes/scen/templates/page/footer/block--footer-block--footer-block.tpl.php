@@ -27,24 +27,22 @@
 
   <div class="footer-content-wrapper">
 
-    <h2><?php print $content ?></h2>
+    <h3><?php print $content ?></h3>
     
     <div class="organisations-logo-wrapper">
       <ul>
-        <li><div class="malmo-opera-logo"><a href="http://www.malmoopera.se"></a></div></li>
-        <li><div class="malmo-stadsteater-logo"><a href="http://www.malmostadsteater.se/"></a></div></li>
-        <li><div class="skanes-dansteater-logo"><a href="http://www.skanesdansteater.se/"></a></div></li>
+        <li><a href="http://www.malmoopera.se" class="organisations-logo malmo-opera-logo"></a></li>
+        <li><a href="http://www.malmostadsteater.se/" class="organisations-logo malmo-stadsteater-logo"></a></li>
+        <li><a href="http://www.skanesdansteater.se/" class="organisations-logo skanes-dansteater-logo"></a></li>
       </ul>
     </div>
 
     <div class="footer-button"><a href="http://www.google.com">About Malmöscenen</a></div>
 
-    <div class="social-logo-wrapper">
-      <ul>
-        <li><div class="facebook-logo"><a href="https://www.facebook.com/"></a></div></li>
-        <li><div class="twitter-logo"><a href="https://twitter.com/"></a></div></li>
-        <li><div class="instagram-logo"><a href="https://www.instagram.com/"></a></div></li>
-      </ul>
+    <div class="social-icon-wrapper">
+      <a href="https://www.facebook.com/" class="social-icon social-icon-facebook"></a>
+      <a href="https://twitter.com/" class="social-icon social-icon-twitter"></a>
+      <a href="https://www.instagram.com/" class="social-icon social-icon-instagram"></a>
     </div>
 
   </div>
