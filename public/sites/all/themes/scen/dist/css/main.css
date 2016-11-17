@@ -544,7 +544,7 @@ button:focus {
   margin: 0 auto 40px auto; }
 
 .social-icon-wrapper {
-  width: 130px;
+  display: table;
   margin: 0 auto; }
 
 .social-icon {

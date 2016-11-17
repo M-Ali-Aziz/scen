@@ -54,19 +54,15 @@
   text-transform: uppercase;
   color: #000;
   background-color: #FFF;
-  // width: 100%;
   width: 220px;
   height: 40px;
   line-height: 40px;
   margin: 0 auto 40px auto;
 }
 
-// .social-icon-wrapper {
-//   padding: 10px 0;
-// }
-
 .social-icon-wrapper{
-  width: 130px;
+  // width: 130px;
+  display: table;
   margin: 0 auto;
 }
 .social-icon {
@@ -88,21 +84,3 @@
     @include svg-bg('footer/instagram_white');
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
