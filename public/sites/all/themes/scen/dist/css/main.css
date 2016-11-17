@@ -467,9 +467,6 @@ body {
 #ui-datepicker-div table td {
   padding-right: 30px; }
 
-.page-main-wrapper {
-  width: 100%; }
-
 input:focus,
 select:focus,
 textarea:focus,
@@ -477,7 +474,7 @@ button:focus {
   outline: none; }
 
 .page-top-wrapper {
-  background: url("./../../graphics/page/temporarybg.jpg");
+  background: url("./../../graphics/page-top/temporarybg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative; }
@@ -490,6 +487,81 @@ button:focus {
   left: 0;
   background: linear-gradient(#f8a9c5, #67e4ff);
   opacity: .2; }
+
+.footer-main-wrapper {
+  background: #000; }
+
+.footer-content-wrapper {
+  width: 960px;
+  color: #FFF;
+  margin: 0 auto;
+  padding: 60px 20px; }
+
+.footer-content-wrapper h3 {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #dadada;
+  text-align: center;
+  margin: 0 0 40px 0; }
+
+.organisations-logo-wrapper {
+  margin-bottom: 40px; }
+
+.organisations-logo {
+  display: inline-block;
+  height: 70px; }
+  .organisations-logo.malmo-opera-logo {
+    background: url("../../graphics/footer/malmoopera.png") transparent 0 0 no-repeat;
+    background: none, url("../../graphics/footer/malmoopera.svg") transparent 0 0 no-repeat;
+    background-size: 100% 100%;
+    width: 80px;
+    margin-right: 88px; }
+  .organisations-logo.malmo-stadsteater-logo {
+    background: url("../../graphics/footer/malmostadsteater.png") transparent 0 0 no-repeat;
+    background: none, url("../../graphics/footer/malmostadsteater.svg") transparent 0 0 no-repeat;
+    background-size: 100% 100%;
+    width: 400px;
+    margin-right: 88px; }
+  .organisations-logo.skanes-dansteater-logo {
+    background: url("../../graphics/footer/skanesdansteater.png") transparent 0 0 no-repeat;
+    background: none, url("../../graphics/footer/skanesdansteater.svg") transparent 0 0 no-repeat;
+    background-size: 100% 100%;
+    width: 250px; }
+
+.malmoscenen-button {
+  display: block;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  background-color: #FFF;
+  width: 220px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto 40px auto; }
+
+.social-icon-wrapper {
+  width: 130px;
+  margin: 0 auto; }
+
+.social-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px; }
+  .social-icon.social-icon-facebook {
+    background: url("../../graphics/footer/facebook_white.png") transparent 0 0 no-repeat;
+    background: none, url("../../graphics/footer/facebook_white.svg") transparent 0 0 no-repeat;
+    margin-right: 10px; }
+  .social-icon.social-icon-twitter {
+    background: url("../../graphics/footer/twitter_white.png") transparent 0 0 no-repeat;
+    background: none, url("../../graphics/footer/twitter_white.svg") transparent 0 0 no-repeat;
+    margin-right: 10px; }
+  .social-icon.social-icon-instagram {
+    background: url("../../graphics/footer/instagram_white.png") transparent 0 0 no-repeat;
+    background: none, url("../../graphics/footer/instagram_white.svg") transparent 0 0 no-repeat; }
 
 .date-generator-content-wrapper .description {
   display: none; }

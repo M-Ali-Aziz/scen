@@ -1,7 +1,3 @@
-.block-blockify-blockify-page-title {
-  display: none;
-}
-
 .footer-main-wrapper {
   background: #000;
 }
@@ -9,4 +5,104 @@
 .footer-content-wrapper {
   width: 960px;
   color: #FFF;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
+
+.footer-content-wrapper h3{
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #dadada;
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.organisations-logo-wrapper {
+  margin-bottom:40px;
+}
+.organisations-logo{
+  display: inline-block;
+  height: 70px;
+
+  &.malmo-opera-logo {
+    @include svg-bg('footer/malmoopera');
+    background-size: 100% 100%;
+    width: 80px;
+    margin-right: 88px;
+  }
+  &.malmo-stadsteater-logo {
+    @include svg-bg('footer/malmostadsteater');
+    background-size: 100% 100%;
+    width: 400px;
+    margin-right: 88px;
+
+  }
+  &.skanes-dansteater-logo {
+    @include svg-bg('footer/skanesdansteater');
+    background-size: 100% 100%;
+    width: 250px;
+  }
+}
+
+.malmoscenen-button {
+  display: block;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  background-color: #FFF;
+  // width: 100%;
+  width: 220px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto 40px auto;
+}
+
+// .social-icon-wrapper {
+//   padding: 10px 0;
+// }
+
+.social-icon-wrapper{
+  width: 130px;
+  margin: 0 auto;
+}
+.social-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+
+  &.social-icon-facebook {
+    @include svg-bg('footer/facebook_white');
+    margin-right: 10px;
+  }
+
+  &.social-icon-twitter {
+    @include svg-bg('footer/twitter_white');
+    margin-right: 10px;
+  }
+
+  &.social-icon-instagram {
+    @include svg-bg('footer/instagram_white');
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

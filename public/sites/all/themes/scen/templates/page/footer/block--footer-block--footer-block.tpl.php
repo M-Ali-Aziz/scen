@@ -30,14 +30,12 @@
     <h3><?php print $content ?></h3>
     
     <div class="organisations-logo-wrapper">
-      <ul>
-        <li><a href="http://www.malmoopera.se" class="organisations-logo malmo-opera-logo"></a></li>
-        <li><a href="http://www.malmostadsteater.se/" class="organisations-logo malmo-stadsteater-logo"></a></li>
-        <li><a href="http://www.skanesdansteater.se/" class="organisations-logo skanes-dansteater-logo"></a></li>
-      </ul>
+      <a href="http://www.malmoopera.se" class="organisations-logo malmo-opera-logo"></a>
+      <a href="http://www.malmostadsteater.se/" class="organisations-logo malmo-stadsteater-logo"></a>
+      <a href="http://www.skanesdansteater.se/" class="organisations-logo skanes-dansteater-logo"></a>
     </div>
 
-    <div class="footer-button"><a href="http://www.google.com">About Malmöscenen</a></div>
+    <div><a href="http://www.google.com" class="malmoscenen-button"><?php print(t('About Malmöscenen'))?></a></div>
 
     <div class="social-icon-wrapper">
       <a href="https://www.facebook.com/" class="social-icon social-icon-facebook"></a>
