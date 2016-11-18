@@ -11,6 +11,10 @@
   padding: 40px;
 }
 
+.date-generator-content-wrapper form label{
+  display: none;
+}
+
 .date-generator-content-wrapper input {
   width: 520px;
   height: 60px;
@@ -78,6 +82,33 @@
 }
 #ui-datepicker-div table td{
   padding-right: 30px;
+}
+
+/* Drupal set message */
+.form-set-error-holder .messages {
+  border: 1px solid red;
+  position: fixed;
+  top: 100px;
+  right: 50%;
+  transform: translate(50%, 0px);
+  background: rgb(255,0,0);
+  background: rgba(255,0,0,.3);
+  border-radius: 10px;
+  padding-right: 20px;
+  color: #FFF;
+}
+/* Drupal set message */
+.block-blockify-blockify-messages {
+  border: 1px solid green;
+  position: fixed;
+  top: 150px;
+  right: 50%;
+  transform: translate(50%, 0px);
+  background: rgb(0,128,0);
+  background: rgba(0,128,0,.3);
+  border-radius: 10px;
+  padding: 10px;
+  color: #FFF;
 }
 
 
