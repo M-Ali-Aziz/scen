@@ -42,7 +42,7 @@ function the_date_generator_form($from, &$form_state) {
   $form['date'] = array(
     '#title' => 'Date',
     '#type' => 'date_popup',
-    // '#default_value' => date('Y-m-d'),
+    '#default_value' => date('Y-m-d'),
     '#date_year_range' => '0:+1',
     '#date_format' => 'd F Y',
     '#required' => TRUE,
