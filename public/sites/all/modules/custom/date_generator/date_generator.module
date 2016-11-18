@@ -40,6 +40,7 @@ function date_generator_block_view($delta = '') {
  */
 function the_date_generator_form($from, &$form_state) {
   $form['date'] = array(
+    '#title' => 'Date',
     '#type' => 'date_popup',
     // '#default_value' => date('Y-m-d'),
     '#date_year_range' => '0:+1',
@@ -53,6 +54,7 @@ function the_date_generator_form($from, &$form_state) {
   );
 
   $form['email'] = array(
+    '#title' => 'Mail',
     '#type' => 'textfield',
     '#attributes' => array(
       'placeholder' => t('Enter your e-mail. We will send you the results.')
@@ -84,8 +86,6 @@ function the_date_generator_form_validate(&$form, &$form_state) {
 
   // Validate email field.
   if (!valid_email_address($values['email'])) {
-    echo 'Not a valid email!';
-
     form_set_error('email', t('Not a valid email.'));
   }
 
@@ -110,9 +110,7 @@ function the_date_generator_form_validate(&$form, &$form_state) {
 
   // Return error message if there is no performance matched with the wished date.
   if (!in_array($values['date'], $all_performances_dates)) {
-    echo 'No valid dates found!';
-    // TODO: Print form errors in theme.
-    form_set_error('date', t('Oops! We could not found a performance in ' . $values['date'] . '.'));
+    form_set_error('date', t('We could not found a performance in ' . $values['date'] . '.'));
   }
 }
 
@@ -185,10 +183,6 @@ function the_date_generator_form_submit(&$form, &$form_state) {
     }
 
   }
-    
-  drupal_set_message($form_date_value);
-  drupal_set_message(t('COOL! the date is matching.'));
-
 
   // Get random nids
   // Randomly getting two nids from $before_activity_nids
@@ -205,7 +199,7 @@ function the_date_generator_form_submit(&$form, &$form_state) {
   // Send email
   drupal_mail('date_generator', 'date_email', $form_email_value, 'sv', $activity_nids);
 
-  drupal_set_message('The email was sent to ' . $form_email_value);
+  drupal_set_message(t('The email was sent to ' . $form_email_value));
 }
 
 /**
