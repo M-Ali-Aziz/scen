@@ -16,9 +16,13 @@
  * @see template_process()
  */
 ?>
+
 <div class="page-main-wrapper">
   <div class="page-top-wrapper">
   <div class="overlay"></div>
+    <div class="form-set-error-holder">
+      <?php print $messages; ?>
+    </div>
     <?php print render($page['header']); ?>
     <?php print render($page['content-top']); ?>
   </div>
