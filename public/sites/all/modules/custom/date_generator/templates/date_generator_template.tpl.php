@@ -52,8 +52,6 @@
 }
 .the-performance h2{
   text-transform: uppercase;
-}.the-performance td div:nth-child(6){
-  font-style: italic;
 }
 .content-holder .field-malmo-stadsteater-time,
 .field-malmo-opera-time,
@@ -96,6 +94,7 @@
 .field-skanes-dansteater-address
 {
   margin: 10px 0;
+  font-style: italic;
   
 }
 /*.the-performance .field-malmo-stadsteater-booking,
