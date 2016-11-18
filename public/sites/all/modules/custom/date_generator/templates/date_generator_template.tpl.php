@@ -33,6 +33,7 @@
 }
 .content-holder h2,p{
   margin: 0;
+  font-family: sans-serif;
 }
 .content-holder h2
 {
