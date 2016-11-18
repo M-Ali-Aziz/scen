@@ -65,14 +65,14 @@
 }
 .the-performance .field-malmo-stadsteater-img,
 .field-malmo-opera-img,
-.field-skanes-dansteater-image
+.field-skanes-dansteater-img
 {
   float: left;
   margin-right: 10px;
 }
 .the-performance .field-malmo-stadsteater-img img,
 .field-malmo-opera-img img,
-.field-skanes-dansteater-image img
+.field-skanes-dansteater-img img
 {
   max-width: 140px;
   max-height: 250px;
@@ -106,7 +106,7 @@
 .field-skanes-dansteater-facebook,
 .field-malmo-stadsteater-insta,
 .field-malmo-opera-insta,
-.field-skanes-dansteater-instagram
+.field-skanes-dansteater-insta
 {
   display: inline-block;
 }*/
