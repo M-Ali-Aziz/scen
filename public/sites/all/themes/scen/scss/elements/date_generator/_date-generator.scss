@@ -87,21 +87,25 @@
 /* Drupal set message */
 .form-set-error-holder .messages {
   border: 1px solid red;
-  position: fixed;
-  top: 100px;
+  position: absolute;
+  top: 80px;
   right: 50%;
-  transform: translate(50%, 0px);
+  transform: translate(50%, 0);
   background: rgb(255,0,0);
   background: rgba(255,0,0,.3);
   border-radius: 10px;
-  padding-right: 20px;
+  padding: 10px;
   color: #FFF;
 }
+.form-set-error-holder .messages ul{
+  margin: 0;
+}
+
 /* Drupal set message */
 .block-blockify-blockify-messages {
   border: 1px solid green;
-  position: fixed;
-  top: 150px;
+  position: absolute;
+  top: 130px;
   right: 50%;
   transform: translate(50%, 0px);
   background: rgb(0,128,0);
@@ -110,7 +114,6 @@
   padding: 10px;
   color: #FFF;
 }
-
 
 
 
