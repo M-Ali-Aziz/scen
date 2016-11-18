@@ -512,10 +512,6 @@ button:focus {
   position: relative;
   padding-bottom: 100px; }
 
-.block-blockify-blockify-logo {
-  max-width: 300px;
-  padding: 50px 0 0 50px; }
-
 .overlay {
   width: 100%;
   height: 100%;
@@ -599,6 +595,12 @@ button:focus {
   .social-icon.social-icon-instagram {
     background: url("../../graphics/footer/instagram_white.png") transparent 0 0 no-repeat;
     background: none, url("../../graphics/footer/instagram_white.svg") transparent 0 0 no-repeat; }
+
+.site-logo-wrapper {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 300px; }
 
 .date-generator-content-wrapper .description {
   display: none; }
