@@ -34,17 +34,16 @@
   background: #f44e85;
   border: none;
   height: 100px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
 }
 .date-generator-content-wrapper .form-submit:hover {
-  background: rgba(244, 78, 133, .85)
+  background: rgba(244, 78, 133, .85);
 }
 .date-generator-content-wrapper .form-submit:active {
   box-shadow: none;
 }
 
 /* icons */
-&.date-icon {
+.date-icon {
   @include svg-bg('date_generator/calendar');
   position: absolute;
   top: 177px;
@@ -53,7 +52,7 @@
   height: 35px;
   z-index: 1;
 }
-&.mail-icon {
+.mail-icon {
   @include svg-bg('date_generator/mail');
   position: absolute;
   top: 250px;
@@ -62,7 +61,7 @@
   height: 35px;
   z-index: 1;
 }
-&.arrow-icon {
+.arrow-icon {
   @include svg-bg('date_generator/arrow_down');
   position: absolute;
   top: 193px;

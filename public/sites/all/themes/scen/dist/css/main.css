@@ -419,8 +419,7 @@ body {
   margin-bottom: 20px;
   background: #f44e85;
   border: none;
-  height: 100px;
-  box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
+  height: 100px; }
 
 .date-generator-content-wrapper .form-submit:hover {
   background: rgba(244, 78, 133, 0.85); }
@@ -655,7 +654,7 @@ button:focus {
   padding-left: 70px; }
 
 .date-generator-content-wrapper .form-submit {
-  color: #FFF;
+  color: rgba(255, 255, 255, 0.2);
   text-transform: uppercase;
   padding: 0; }
 
