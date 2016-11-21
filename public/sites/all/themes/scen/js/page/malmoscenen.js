@@ -9,7 +9,6 @@
   // to efect the styling of the submit button's text color.
   $(document).bind('input propertychange', function() {
     var emailValue = $('#edit-email').val();
-      // console.log('Email value2= ' + emailValue:contains('@'));
     if (emailValue &&
         emailValue.indexOf('@') > 0 &&
         emailValue.slice(-1) != '@' &&
