@@ -422,6 +422,9 @@ body {
   height: 100px;
   box-shadow: 5px 5px rgba(0, 0, 0, 0.2); }
 
+.date-generator-content-wrapper .form-submit:hover {
+  background: rgba(244, 78, 133, 0.85); }
+
 .date-generator-content-wrapper .form-submit:active {
   box-shadow: none; }
 
@@ -509,7 +512,6 @@ button:focus {
   background: url("./../../graphics/page-top/temporarybg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   padding-bottom: 100px; }
 
 .overlay {
@@ -531,11 +533,6 @@ button:focus {
   padding: 60px 20px; }
 
 .footer-content-wrapper h3 {
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
-  font-size: 20px;
-  color: #dadada;
-  text-align: center;
   margin: 0 0 40px 0; }
 
 .organisations-logo-wrapper {
@@ -565,15 +562,9 @@ button:focus {
 .malmoscenen-button {
   display: block;
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  text-align: center;
-  text-transform: uppercase;
-  color: #000;
   background-color: #FFF;
   width: 220px;
   height: 40px;
-  line-height: 40px;
   margin: 0 auto 40px auto; }
 
 .social-icon-wrapper {
@@ -597,9 +588,7 @@ button:focus {
     background: none, url("../../graphics/footer/instagram_white.svg") transparent 0 0 no-repeat; }
 
 .site-logo-wrapper {
-  position: absolute;
-  top: 50px;
-  left: 50px;
+  padding: 50px 0 0 50px;
   width: 300px; }
 
 .date-generator-content-wrapper .description {
@@ -640,3 +629,18 @@ button:focus {
 /* Date field calendar*/
 #ui-datepicker-div {
   font-family: 'Roboto', sans-serif; }
+
+.footer-content-wrapper h3 {
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 20px;
+  color: #dadada;
+  text-align: center; }
+
+.malmoscenen-button {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 40px; }
