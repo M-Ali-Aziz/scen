@@ -512,6 +512,7 @@ button:focus {
   background: url("./../../graphics/page-top/temporarybg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
   padding-bottom: 100px; }
 
 .overlay {
