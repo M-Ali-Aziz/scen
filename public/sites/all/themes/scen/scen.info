@@ -3,6 +3,7 @@ core = 7.x
 
 ; Javascripts.
 scripts[] = dist/js/bundle.js
+scripts[] = js/page/malmoscenen.js
 
 ; Stylesheets.
 stylesheets[print][] = dist/css/print.css
