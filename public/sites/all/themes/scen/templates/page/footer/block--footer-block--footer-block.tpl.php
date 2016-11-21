@@ -35,7 +35,13 @@
       <a href="http://www.skanesdansteater.se/" class="organisations-logo skanes-dansteater-logo"></a>
     </div>
 
-    <div><a href="http://www.google.com" class="malmoscenen-button"><?php print(t('About Malmöscenen'))?></a></div>
+    <div class="about-malmoscenen-button"><?php print(t('About Malmöscenen'))?></div>
+    <div class="about-malmoscenen-underlay"></div>
+    <div class="about-malmoscenen">
+    <div class="about-malmoscenen-close-button"></div>
+      <h1><?php print(t('H1 Head'))?></h1>
+      <p><?php print(t('Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Etiam porta sem malesuada magna mollis euismod. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.'))?></p>
+    </div>
 
     <div class="social-icon-wrapper">
       <a href="https://www.facebook.com/" class="social-icon social-icon-facebook"></a>
