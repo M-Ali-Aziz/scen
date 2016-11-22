@@ -54,6 +54,10 @@
 .the-performance h2{
   text-transform: uppercase;
 }
+.the-performance a{
+  text-decoration: none;
+  color: #000;
+}
 .content-holder .field-malmo-stadsteater-time,
 .field-malmo-opera-time,
 .field-skanes-dansteater-time
@@ -96,20 +100,7 @@
 {
   margin: 10px 0;
   font-style: italic;
-  
 }
-/*.the-performance .field-malmo-stadsteater-booking,
-.field-malmo-opera-booking,
-.field-skanes-dansteater-booking,
-.field-malmo-stadsteater-facebook,
-.field-malmo-opera-facebook,
-.field-skanes-dansteater-facebook,
-.field-malmo-stadsteater-insta,
-.field-malmo-opera-insta,
-.field-skanes-dansteater-insta
-{
-  display: inline-block;
-}*/
 .the-performance .field-malmo-stadsteater-booking,
 .field-malmo-opera-booking,
 .field-skanes-dansteater-booking
@@ -121,6 +112,8 @@
   vertical-align: middle;
   line-height: 40px;
   display: inline-block;
+  float: left;
+  margin-right: 10px; 
 }
 .the-performance .field-malmo-stadsteater-booking a,
 .field-malmo-opera-booking a,
