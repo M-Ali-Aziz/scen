@@ -110,7 +110,7 @@ function the_date_generator_form_validate(&$form, &$form_state) {
 
   // Return error message if there is no performance matched with the wished date.
   if (!in_array($values['date'], $all_performances_dates)) {
-    form_set_error('date', t('We could not found a performance in ' . $values['date'] . '.'));
+    form_set_error('date', t('We could not found a performance in ' . $values['date']));
   }
 }
 
