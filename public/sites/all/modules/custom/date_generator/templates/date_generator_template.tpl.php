@@ -58,6 +58,9 @@
   text-decoration: none;
   color: #000;
 }
+.the-performance a:hover{
+  text-decoration: underline;
+}
 .content-holder .field-malmo-stadsteater-time,
 .field-malmo-opera-time,
 .field-skanes-dansteater-time
