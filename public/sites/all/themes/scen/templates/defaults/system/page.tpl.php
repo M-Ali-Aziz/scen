@@ -26,7 +26,9 @@
     <?php print render($page['header']); ?>
     <?php print render($page['content-top']); ?>
   </div>
+  <div class="content-main-wrapper">
   <?php print render($page['content']); ?>
+  </div>
   <div class="footer-main-wrapper">
     <?php print render($page['footer']); ?>
   </div>
