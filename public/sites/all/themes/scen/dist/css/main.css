@@ -521,6 +521,15 @@ button:focus {
   background: linear-gradient(#f8a9c5, #67e4ff);
   opacity: .2; }
 
+.address-icon {
+  background: url("../../graphics/page-content/coordinates.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/page-content/coordinates.svg") transparent 0 0 no-repeat;
+  background-size: 100% 100%;
+  transform: translate(0, 2px);
+  display: inline-block;
+  width: 17px;
+  height: 17px; }
+
 .content-main-wrapper {
   background: gray;
   background-repeat: no-repeat;
@@ -541,6 +550,9 @@ button:focus {
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px; }
+
+.performance-node {
+  padding: 20px; }
 
 .footer-main-wrapper {
   background: #000; }
@@ -680,6 +692,11 @@ button:focus {
 /* Date field calendar*/
 #ui-datepicker-div {
   font-family: 'Roboto', sans-serif; }
+
+.address-field p {
+  font-style: italic;
+  color: #696969;
+  padding-top: 10px; }
 
 .footer-content-wrapper h3 {
   font-family: 'Roboto', sans-serif;
