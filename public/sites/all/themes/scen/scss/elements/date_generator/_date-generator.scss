@@ -87,6 +87,9 @@
 }
 
 /* Drupal set message */
+.form-set-error-holder .messages ul{
+  margin: 0;
+}
 .form-set-error-holder .messages {
   border: 1px solid red;
   position: absolute;
@@ -99,22 +102,16 @@
   padding: 10px;
   color: #FFF;
 }
-.form-set-error-holder .messages ul{
-  margin: 0;
-}
-
-/* Drupal set message */
-.block-blockify-blockify-messages {
+.form-set-error-holder .status {
   border: 1px solid green;
-  position: absolute;
   top: 130px;
-  right: 50%;
-  transform: translate(50%, 0px);
   background: rgb(0,128,0);
   background: rgba(0,128,0,.3);
-  border-radius: 10px;
-  padding: 10px;
-  color: #FFF;
+}
+.form-set-error-holder .warning {
+  border: 1px solid yellow;
+  background: rgb(255,252,229);
+  background: rgba(255,252,229,.3);
 }
 
 
