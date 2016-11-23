@@ -5,22 +5,22 @@
   */
 ?>
 
-<?php
-/**
-  * Note!!!
-  * Some of the classes are from the theme templates.
-  */
-?>
+<div class="content-content-wrapper">
 
+  <div class="content-box before-node-first">
+    <?php print render($before_nodes[0]); ?>
+  </div>
 
+  <div class="content-box before-node-secund">
+    <?php print render($before_nodes[1]); ?>
+  </div>
 
-<?php print render($before_nodes[0]); ?>
+  <div class="content-box performance-node">
+    <?php print render($performance); ?>
+  </div>
 
+  <div class="content-box after-node">
+    <?php print render($after_node); ?> 
+  </div>
 
-<?php print render($before_nodes[1]); ?>
-
-
-<?php print render($performance); ?>
-
-
-<?php print render($after_node); ?> 
+</div>
