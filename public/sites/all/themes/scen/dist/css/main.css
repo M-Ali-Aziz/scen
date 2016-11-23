@@ -521,6 +521,27 @@ button:focus {
   background: linear-gradient(#f8a9c5, #67e4ff);
   opacity: .2; }
 
+.content-main-wrapper {
+  background: gray;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+
+.content-content-wrapper {
+  width: 960px;
+  margin: 0 auto;
+  padding: 100px 0; }
+
+.content-box h2, p {
+  margin: 0; }
+
+.content-box {
+  width: 400px;
+  padding: 20px 40px;
+  background-color: white;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px; }
+
 .footer-main-wrapper {
   background: #000; }
 
@@ -686,3 +707,17 @@ button:focus {
   font-weight: lighter;
   color: gray;
   line-height: 30px; }
+
+.content-box {
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 20px; }
+
+.content-box h2 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px; }
+
+.content-box a {
+  color: #f44e85; }
