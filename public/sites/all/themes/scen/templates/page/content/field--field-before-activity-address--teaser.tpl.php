@@ -52,7 +52,7 @@
 
   <?php foreach ($items as $delta => $item): ?>
     <div class="address-field">
-      <span class="address-icon"><?php print render($item); ?></span>
+      <span class="address-icon"></span><?php print render($item); ?>
     </div>
   <?php endforeach; ?>
 </div>
