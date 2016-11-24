@@ -765,3 +765,6 @@ button:focus {
 .font-italic {
   line-height: 30px;
   font-style: italic; }
+
+.title-field {
+  text-transform: uppercase; }
