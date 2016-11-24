@@ -569,6 +569,13 @@ button:focus {
 .performance-node {
   padding: 20px; }
 
+.time-field {
+  margin-bottom: 7px; }
+
+.time-field span,
+.time-field div {
+  display: inline-block; }
+
 .footer-main-wrapper {
   background: #000; }
 
@@ -765,10 +772,6 @@ button:focus {
 .font-italic {
   line-height: 30px;
   font-style: italic; }
-
-.time-field span,
-.time-field div {
-  display: inline-block; }
 
 .title-field {
   text-transform: uppercase; }
