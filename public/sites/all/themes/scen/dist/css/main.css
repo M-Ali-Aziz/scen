@@ -744,6 +744,7 @@ button:focus {
   font-family: 'Dosis', sans-serif;
   font-weight: medium;
   font-size: 26px;
+  text-transform: uppercase;
   color: #000;
   text-align: center; }
 
