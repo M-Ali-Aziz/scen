@@ -7,6 +7,8 @@
 
 <div class="content-content-wrapper">
 
+  <h1><?php print t('For example it may look like this:') ?></h1>  
+
   <div class="content-box before-node-first">
     <?php print render($before_nodes[0]); ?>
   </div>

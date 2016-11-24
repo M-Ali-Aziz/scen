@@ -551,7 +551,10 @@ button:focus {
 .content-content-wrapper {
   width: 960px;
   margin: 0 auto;
-  padding: 100px 0; }
+  padding: 80px 0; }
+
+.content-main-wrapper h1 {
+  margin: 0 0 50px 0; }
 
 .content-box h2, p {
   margin: 0; }
@@ -736,6 +739,13 @@ button:focus {
   font-weight: lighter;
   color: gray;
   line-height: 30px; }
+
+.content-main-wrapper h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: medium;
+  font-size: 26px;
+  color: #000;
+  text-align: center; }
 
 .content-box {
   color: #000;
