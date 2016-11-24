@@ -42,25 +42,31 @@ function date_generator_block_view($delta = '') {
     break;
     // Date Generator Result content
     case 'date_generator_result':
-    $block['subject'] = NULL;
+      $block['subject'] = NULL;
 
-    // Add before performance nodos
-    foreach (variable_get('date_generator_result_nids')['before'] as $before_nid) {
-      $before_nodes[] = node_view(node_load($before_nid), 'teaser');
-    }
-    // Add performance nde
-    $performance_node = node_view(node_load(variable_get('date_generator_result_nids')['performance']), 'teaser');
+      if (variable_get('date_generator_result_nids')) {
+        // Add before performance nodos
+        foreach (variable_get('date_generator_result_nids')['before'] as $before_nid) {
+          $before_nodes[] = node_view(node_load($before_nid), 'teaser');
+        }
+        // Add performance nde
+        $performance_node = node_view(node_load(variable_get('date_generator_result_nids')['performance']), 'teaser');
 
-    // Add after performance node
-    $after_node = node_view(node_load(variable_get('date_generator_result_nids')['after']), 'teaser');
+        // Add after performance node
+        $after_node = node_view(node_load(variable_get('date_generator_result_nids')['after']), 'teaser');
 
-    // Add the nodes to the block content
-    $block['content'] = theme('date_generator_result_template', array(
-      'before_nodes' => $before_nodes,
-      'performance' => $performance_node,
-      'after_node' => $after_node,
-      )
-    );
+        // Add the nodes to the block content
+        $block['content'] = theme('date_generator_result_template', array(
+          'before_nodes' => $before_nodes,
+          'performance' => $performance_node,
+          'after_node' => $after_node,
+          )
+        );
+      }
+      else {
+        // Add the nodes to the block content
+        $block['content'] = '<h1 style="padding: 30px;">' . t('Please Create your first dream evening to see the result here:') . '</h1>';
+      }
     break;
   }
 
@@ -235,6 +241,9 @@ function the_date_generator_form_submit(&$form, &$form_state) {
 
   // Set $activity_nids as global
   variable_set('date_generator_result_nids', $activity_nids);
+
+  // Create the blocks with new data
+  date_generator_block_info();
 }
 
 /**
