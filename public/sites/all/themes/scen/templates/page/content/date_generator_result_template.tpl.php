@@ -7,7 +7,7 @@
 
 <div class="content-content-wrapper">
 
-  <h1><?php print t('For example it may look like this:') ?></h1>  
+  <h1><?php print t('For example it may look like this:') ?></h1>
 
   <div class="content-box start-box">
     <h2><?php print t('The evening begins') ?></h2>

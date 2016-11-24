@@ -538,6 +538,9 @@ button:focus {
   max-width: 140px;
   max-height: 200px; }
 
+.logo-field {
+  margin-bottom: 10px; }
+
 .logo-field img {
   max-width: 190px;
   max-height: 40px; }
