@@ -760,3 +760,7 @@ button:focus {
 
 .content-box a {
   color: #f44e85; }
+
+.font-italic {
+  line-height: 30px;
+  font-style: italic; }
