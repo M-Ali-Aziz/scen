@@ -766,5 +766,9 @@ button:focus {
   line-height: 30px;
   font-style: italic; }
 
+.time-field span,
+.time-field div {
+  display: inline-block; }
+
 .title-field {
   text-transform: uppercase; }
