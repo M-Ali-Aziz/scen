@@ -512,7 +512,7 @@ button:focus {
   position: relative;
   padding-bottom: 100px; }
 
-.overlay {
+.overlay-page-top {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -559,10 +559,19 @@ button:focus {
   max-height: 40px; }
 
 .content-main-wrapper {
-  background: gray;
+  background: url("./../../graphics/page-content/mapbg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative; }
+
+.overlay-page-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFF;
+  opacity: .4; }
 
 .content-content-wrapper {
   position: relative;
@@ -610,6 +619,50 @@ button:focus {
 
 .performance-node .address-field {
   margin-bottom: 10px; }
+
+.timeline {
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 580px;
+  border-left: 3px dotted #000; }
+
+.circle {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 100%; }
+
+.the-star {
+  background: url("../../graphics/page-content/star.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/page-content/star.svg") transparent 0 0 no-repeat;
+  width: 30px;
+  height: 30px;
+  top: 430px; }
+
+.circle1 {
+  width: 25px;
+  height: 25px;
+  top: 180px; }
+
+.circle2 {
+  top: 260px; }
+
+.circle3 {
+  top: 330px; }
+
+.circle4 {
+  top: 520px; }
+
+.circle5 {
+  top: 700px; }
+
+.circle6 {
+  top: 760px; }
 
 .time-field {
   margin-bottom: 5px; }

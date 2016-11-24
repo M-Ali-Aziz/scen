@@ -7,6 +7,17 @@
 
 <div class="content-content-wrapper">
 
+  <div class="timeline"></div>
+
+  <div class="circle the-star"></div>
+
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
+  <div class="circle circle5"></div>
+  <div class="circle circle6"></div>
+
   <h1><?php print t('For example it may look like this:') ?></h1>
 
   <div class="content-box start-box">

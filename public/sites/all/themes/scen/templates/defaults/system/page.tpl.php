@@ -19,7 +19,7 @@
 
 <div class="page-main-wrapper">
   <div class="page-top-wrapper">
-  <div class="overlay"></div>
+  <div class="overlay-page-top"></div>
     <div class="form-set-error-holder">
       <?php print $messages; ?>
     </div>
@@ -27,6 +27,7 @@
     <?php print render($page['content-top']); ?>
   </div>
   <div class="content-main-wrapper">
+  <div class="overlay-page-content"></div>
   <?php print render($page['content']); ?>
   </div>
   <div class="footer-main-wrapper">
