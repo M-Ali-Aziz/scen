@@ -19,6 +19,7 @@
  * @see oddbaby_preprocess()
  */
 ?>
+<!-- About Malmöscenen page -->
 <div class="about-malmoscenen-underlay"></div>
     <div class="about-malmoscenen">
     <div class="about-malmoscenen-close-button"></div>
