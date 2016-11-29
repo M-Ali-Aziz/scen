@@ -3,6 +3,21 @@
   console.log('malmoscenen.js is ON!');
 
   /*
+   * header
+   */
+  // Main menu efects
+  // Show main menu when clicking on main menu button
+  $(document).on('click', '.main-menu-button', function() {
+    $('.main-menu-button-close').css('display', 'block');
+    $('.main-menu').css('display', 'block');
+  });
+  // Hide main menu when clicking on main menu close button
+  $(document).on('click', '.main-menu-button-close', function() {
+    $('.main-menu-button-close').css('display', 'none');
+    $('.main-menu').css('display', 'none');
+  });
+
+  /*
    * Content-top
    */
   // Validate tha value of email(input)
@@ -28,12 +43,12 @@
   /*
    * Footer
    */
-  $(document).on('click', '.about-malmoscenen-button', function(){
+  $(document).on('click', '.about-malmoscenen-button', function() {
     $('.about-malmoscenen-underlay').css('display', 'block');
     $('.about-malmoscenen').css('display', 'block');
   });
 
-   $(document).on('click', ".about-malmoscenen-close-button, .about-malmoscenen-underlay", function (){
+   $(document).on('click', ".about-malmoscenen-close-button, .about-malmoscenen-underlay", function () {
     $('.about-malmoscenen-underlay').css('display', 'none');
     $('.about-malmoscenen').css('display', 'none');
   });
