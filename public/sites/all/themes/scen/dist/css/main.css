@@ -499,6 +499,39 @@ body {
   background: #fffce5;
   background: rgba(255, 252, 229, 0.3); }
 
+.about-malmoscenen-underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: .8;
+  z-index: 2;
+  display: none; }
+
+.about-malmoscenen {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 960px;
+  height: 85%;
+  background: white;
+  padding: 100px;
+  z-index: 2;
+  display: none; }
+
+.about-malmoscenen-close-button {
+  background: url("../../graphics/footer/xmark.png") transparent 0 0 no-repeat;
+  background: none, url("../../graphics/footer/xmark.svg") transparent 0 0 no-repeat;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer; }
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -714,39 +747,6 @@ button:focus {
   margin: 0 auto 40px auto;
   cursor: pointer; }
 
-.about-malmoscenen-underlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: .8;
-  z-index: 2;
-  display: none; }
-
-.about-malmoscenen {
-  position: fixed;
-  top: 100px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 960px;
-  height: 85%;
-  background: white;
-  padding: 100px;
-  z-index: 2;
-  display: none; }
-
-.about-malmoscenen-close-button {
-  background: url("../../graphics/footer/xmark.png") transparent 0 0 no-repeat;
-  background: none, url("../../graphics/footer/xmark.svg") transparent 0 0 no-repeat;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer; }
-
 .social-icon-wrapper {
   display: table;
   margin: 0 auto; }
@@ -855,6 +855,19 @@ button:focus {
 #ui-datepicker-div {
   font-family: 'Roboto', sans-serif; }
 
+.about-malmoscenen .title h1 {
+  font-family: 'Dosis', sans-serif;
+  font-size: 40px;
+  color: #000;
+  line-height: 30px;
+  text-align: left; }
+
+.about-malmoscenen .body p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  color: gray;
+  line-height: 30px; }
+
 .address-field p {
   font-style: italic;
   color: #696969;
@@ -874,18 +887,6 @@ button:focus {
   text-transform: uppercase;
   color: #000;
   line-height: 40px; }
-
-.about-malmoscenen h1 {
-  font-family: 'Dosis', sans-serif;
-  font-size: 40px;
-  color: #000;
-  line-height: 30px; }
-
-.about-malmoscenen p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  color: gray;
-  line-height: 30px; }
 
 .main-menu a {
   text-decoration: none;
