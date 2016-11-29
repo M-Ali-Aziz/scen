@@ -863,7 +863,8 @@ button:focus {
   font-size: 40px;
   color: #000;
   line-height: 30px;
-  text-align: left; }
+  text-align: left;
+  text-transform: capitalize; }
 
 .about-malmoscenen .body p {
   font-family: 'Roboto', sans-serif;
