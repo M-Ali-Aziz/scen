@@ -26,6 +26,8 @@
   <?php endif;?>
 
   <div class="site-logo-wrapper">
-  <?php print $content ?>
+    <div class="site-logo">
+      <?php print $content ?>
+    </div>
   </div>
 </div>
