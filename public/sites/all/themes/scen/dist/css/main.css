@@ -778,7 +778,8 @@ button:focus {
   top: 50px;
   right: 50px;
   width: 25px;
-  height: 25px; }
+  height: 25px;
+  cursor: pointer; }
 
 .main-menu-button-close {
   background: url("../../graphics/header/xmark.png") transparent 0 0 no-repeat;
@@ -790,6 +791,7 @@ button:focus {
   height: 25px;
   opacity: .2;
   z-index: 1;
+  cursor: pointer;
   display: none; }
 
 .main-menu-button-close:hover {
