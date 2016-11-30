@@ -114,8 +114,48 @@
   top: 760px;
 }
 
+/*
+* @media if the screen is smaller than 960px
+*/
+@media only screen and (max-width: 960px) {
+  .content-content-wrapper {
+    width: 100%;
+  }
 
+  .content-main-wrapper h1 {
+    margin-bottom: 80px;
+  }
 
+  .content-box {
+    margin: 0 auto 20px auto;
+  }
+
+  .start-box,
+  .before-node-first,
+  .before-node-secund,
+  .performance-node,
+  .after-node,
+  .end-box-one,
+  .end-box-two
+  {
+    position: relative;
+    top: auto;
+    z-index: 1;
+  }
+
+  .timeline {
+    top: 150px;
+    height: 1100px;
+  }
+
+  .circle {
+   display: none; 
+  }
+  .circle1 {
+    display: block;
+    top: 135px;
+  }
+}
 
 
 
