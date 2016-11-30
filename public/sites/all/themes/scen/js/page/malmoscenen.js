@@ -16,6 +16,15 @@
     $('.main-menu-button-close').css('display', 'none');
     $('.main-menu').css('display', 'none');
   });
+  // Show About Malmöscenen page - main menu
+  $(document).on('click', '.main-menu a', function() {
+    var attr = $(this).attr("href");
+    if (attr == "/" || attr == "#") {
+      $(this).attr("href", "#");
+      $('.about-malmoscenen-button').click();
+    }
+    $('.main-menu-button-close').click();
+  });
 
   /*
    * Content-top
