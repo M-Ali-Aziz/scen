@@ -52,7 +52,7 @@
 
   <?php foreach ($items as $delta => $item): ?>
     <div class="time-field">
-      <h2><span>(</span><?php print render($item); ?><span>)</span></h2>
+      <h2><!-- <span>(</span> --><?php print render($item); ?><!-- <span>)</span> --></h2>
     </div>
   <?php endforeach; ?>
 </div>
