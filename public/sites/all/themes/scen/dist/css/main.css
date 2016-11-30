@@ -698,7 +698,7 @@ button:focus {
   top: 760px; }
 
 /*
-* @media if the screen is smaller than 960px
+* @media - if the screen is smaller than 960px
 */
 @media only screen and (max-width: 960px) {
   .content-content-wrapper {
@@ -795,6 +795,21 @@ button:focus {
   .social-icon.social-icon-instagram {
     background: url("../../graphics/footer/instagram_white.png") transparent 0 0 no-repeat;
     background: none, url("../../graphics/footer/instagram_white.svg") transparent 0 0 no-repeat; }
+
+/*
+* @media - if the screen is smaller than 960px
+*/
+@media only screen and (max-width: 960px) {
+  .footer-content-wrapper {
+    width: 100%; }
+  .organisations-logo {
+    display: block; }
+    .organisations-logo.malmo-opera-logo {
+      margin: 0 auto 20px auto; }
+    .organisations-logo.malmo-stadsteater-logo {
+      margin: 0 auto 20px auto; }
+    .organisations-logo.skanes-dansteater-logo {
+      margin: 0 auto 50px auto; } }
 
 .site-logo h1 {
   display: none; }
