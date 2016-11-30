@@ -16,7 +16,6 @@
   left: 50%;
   transform: translate(-50%, 0);
   width: 960px;
-  height: 85%;
   background: white;
   padding: 100px;
   z-index: 2;
@@ -31,4 +30,13 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+}
+
+/*
+* @media - if the screen is smaller than 960px
+*/
+@media only screen and (max-width: 960px) {
+  .about-malmoscenen {
+    width: 90%;
+  }
 }
