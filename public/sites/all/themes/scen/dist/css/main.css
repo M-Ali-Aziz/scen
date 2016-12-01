@@ -534,7 +534,7 @@ body {
 /*
 * @media - if the screen is smaller than 960px
 */
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 990px) {
   .about-malmoscenen {
     width: 90%; } }
 
@@ -645,7 +645,7 @@ button:focus {
   top: 360px; }
 
 .end-box-one {
-  top: 650px; }
+  top: 670px; }
 
 .before-node-secund {
   margin-bottom: 70px; }
@@ -706,7 +706,7 @@ button:focus {
 /*
 * @media - if the screen is smaller than 960px
 */
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 990px) {
   .content-content-wrapper {
     width: 100%; }
   .content-main-wrapper h1 {
@@ -805,7 +805,7 @@ button:focus {
 /*
 * @media - if the screen is smaller than 960px
 */
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 990px) {
   .footer-content-wrapper {
     width: 100%; }
   .organisations-logo {
