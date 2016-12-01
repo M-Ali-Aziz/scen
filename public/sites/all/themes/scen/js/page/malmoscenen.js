@@ -1,7 +1,4 @@
-(function ($) {
-
-  console.log('malmoscenen.js is ON!');
-
+jQuery(document).ready(function($) {
   /*
    * header
    */
@@ -49,6 +46,12 @@
     }
   });
 
+  // Change placeholder text for email input
+  // if the screen is smaller than 630px
+  if ($(window).width() < 630) {
+    $('#edit-email').attr('placeholder', 'Enter your e-mail.');
+  }
+
   /*
    * Footer
    */
@@ -62,4 +65,4 @@
     $('.about-malmoscenen').css('display', 'none');
   });
 
-}(jQuery));
+});
