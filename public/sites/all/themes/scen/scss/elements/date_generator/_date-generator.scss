@@ -114,7 +114,29 @@
   background: rgba(255,252,229,.3);
 }
 
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .date-generator-content-wrapper {
+    max-width: 95%;
+  }
 
+  .date-generator-content-wrapper input {
+    width: 100%;
+  }
+
+  .container-inline-date .form-item-date,
+  .container-inline-date .date-padding,
+  .container-inline-date .form-item-date-date
+  {
+    width: 100%
+  }
+
+  .date-generator-content-wrapper .container-inline-date input {
+    width: 100%;
+  }
+}
 
 
 

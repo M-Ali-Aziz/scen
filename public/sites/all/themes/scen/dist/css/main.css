@@ -499,6 +499,21 @@ body {
   background: #fffce5;
   background: rgba(255, 252, 229, 0.3); }
 
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .date-generator-content-wrapper {
+    max-width: 95%; }
+  .date-generator-content-wrapper input {
+    width: 100%; }
+  .container-inline-date .form-item-date,
+  .container-inline-date .date-padding,
+  .container-inline-date .form-item-date-date {
+    width: 100%; }
+  .date-generator-content-wrapper .container-inline-date input {
+    width: 100%; } }
+
 .about-malmoscenen-underlay {
   position: fixed;
   top: 0;
@@ -824,6 +839,14 @@ button:focus {
   padding: 50px 0 0 50px;
   width: 300px; }
 
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .site-logo {
+    padding: 20px 0 0 20px;
+    width: 200px; } }
+
 .main-menu-button {
   background: url("../../graphics/header/hamburger-white.png") transparent 0 0 no-repeat;
   background: none, url("../../graphics/header/hamburger-white.svg") transparent 0 0 no-repeat;
@@ -869,6 +892,25 @@ button:focus {
 
 .main-menu li:last-child {
   padding-bottom: 20px; }
+
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .main-menu-button {
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px; }
+  .main-menu-button-close {
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px; }
+  .main-menu {
+    top: 15px;
+    right: 15px;
+    padding: 30px 30px 0px 0px; } }
 
 .date-generator-content-wrapper .description {
   display: none; }

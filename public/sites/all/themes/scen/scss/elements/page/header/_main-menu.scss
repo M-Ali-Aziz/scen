@@ -48,3 +48,28 @@
 .main-menu li:last-child {
   padding-bottom: 20px;
 }
+
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .main-menu-button {
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .main-menu-button-close {
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .main-menu {
+    top: 15px;
+    right: 15px;
+    padding: 30px 30px 0px 0px;
+  }
+}

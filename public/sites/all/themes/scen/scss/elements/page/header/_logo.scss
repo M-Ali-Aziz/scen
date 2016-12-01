@@ -5,3 +5,13 @@
   padding: 50px 0 0 50px;
   width: 300px;
 }
+
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .site-logo {
+    padding: 20px 0 0 20px;
+    width: 200px;
+  }
+}
