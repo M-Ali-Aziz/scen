@@ -543,6 +543,17 @@ body {
   #ui-datepicker-div tr {
     width: 85%; } }
 
+/*
+* @media - if the screen is smaller than 319px
+*/
+@media only screen and (max-width: 319px) {
+  .date-icon {
+    display: none; }
+  .arrow-icon {
+    display: none; }
+  .mail-icon {
+    display: none; } }
+
 .about-malmoscenen-underlay {
   position: fixed;
   top: 0;
