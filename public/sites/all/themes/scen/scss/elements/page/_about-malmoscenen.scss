@@ -40,3 +40,21 @@
     width: 90%;
   }
 }
+
+/*
+* @media - if the screen is smaller than 630px
+*/
+@media only screen and (max-width: 630px) {
+  .about-malmoscenen {
+    padding: 60px;
+  }
+}
+
+/*
+* @media - if the screen is smaller than 465px
+*/
+@media only screen and (max-width: 465px) {
+  .about-malmoscenen {
+    padding: 40px;
+  }
+}
