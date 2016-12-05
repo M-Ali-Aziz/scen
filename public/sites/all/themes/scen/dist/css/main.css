@@ -574,6 +574,8 @@ body {
   background: white;
   padding: 100px;
   z-index: 2;
+  max-height: 80%;
+  overflow: auto;
   display: none; }
 
 .about-malmoscenen-close-button {
