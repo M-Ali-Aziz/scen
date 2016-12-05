@@ -21,6 +21,7 @@
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   margin: 0 0 10px 0;
+  padding-left: 70px;
 }
 
 .date-generator-content-wrapper .container-inline-date input {
@@ -82,8 +83,8 @@
 #ui-datepicker-div a span{
   display: none;
 }
-#ui-datepicker-div table td{
-  padding-right: 30px;
+#ui-datepicker-div table td a{
+  text-align: center;
 }
 
 /* Drupal set message */
@@ -138,7 +139,45 @@
   }
 }
 
+/*
+* @media - if the screen is smaller than 465px
+*/
+@media only screen and (max-width: 465px) {
+  .date-generator-content-wrapper {
+    padding: 20px;
+  }
 
+  .date-generator-content-wrapper input {
+    width: 100%;
+    padding-left: 55px;
+  }
+
+  .date-generator-content-wrapper .form-submit {
+    height: 80px;
+  }
+
+  .date-icon {
+    top: 157px;
+    left: 33px;
+  }
+
+  .arrow-icon {
+    top: 172px;
+    right: 35px;
+    width: 11px;
+  }
+
+  .mail-icon {
+    top: 230px;
+    left: 33px;
+  }
+
+  #ui-datepicker-div,
+  #ui-datepicker-div tr,
+  {
+    width: 85%;
+  }
+}
 
 
 

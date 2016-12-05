@@ -30,7 +30,6 @@
   font-weight: lighter;
   font-size: 20px;
   color: #000;
-  padding-left: 70px;
 }
 
 .date-generator-content-wrapper .form-submit {
@@ -42,4 +41,22 @@
 /* Date field calendar*/
 #ui-datepicker-div {
   font-family: 'Roboto', sans-serif;
+}
+
+
+/*
+* @media - if the screen is smaller than 465px
+*/
+@media only screen and (max-width: 465px) {
+  .date-generator-content-wrapper h1 {
+    font-size: 35px;
+  }
+
+  .date-generator-content-wrapper p {
+    font-size: 15px;
+  }
+
+  .date-generator-content-wrapper input {
+    font-size: 15px;
+  }
 }

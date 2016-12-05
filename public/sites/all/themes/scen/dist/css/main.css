@@ -407,7 +407,8 @@ body {
   height: 60px;
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin: 0 0 10px 0; }
+  margin: 0 0 10px 0;
+  padding-left: 70px; }
 
 .date-generator-content-wrapper .container-inline-date input {
   width: 520px;
@@ -469,8 +470,8 @@ body {
 #ui-datepicker-div a span {
   display: none; }
 
-#ui-datepicker-div table td {
-  padding-right: 30px; }
+#ui-datepicker-div table td a {
+  text-align: center; }
 
 /* Drupal set message */
 .form-set-error-holder .messages ul {
@@ -513,6 +514,31 @@ body {
     width: 100%; }
   .date-generator-content-wrapper .container-inline-date input {
     width: 100%; } }
+
+/*
+* @media - if the screen is smaller than 465px
+*/
+@media only screen and (max-width: 465px) {
+  .date-generator-content-wrapper {
+    padding: 20px; }
+  .date-generator-content-wrapper input {
+    width: 100%;
+    padding-left: 55px; }
+  .date-generator-content-wrapper .form-submit {
+    height: 80px; }
+  .date-icon {
+    top: 157px;
+    left: 33px; }
+  .arrow-icon {
+    top: 172px;
+    right: 35px;
+    width: 11px; }
+  .mail-icon {
+    top: 230px;
+    left: 33px; }
+  #ui-datepicker-div,
+  #ui-datepicker-div tr {
+    width: 85%; } }
 
 .about-malmoscenen-underlay {
   position: fixed;
@@ -939,8 +965,7 @@ button:focus {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   font-size: 20px;
-  color: #000;
-  padding-left: 70px; }
+  color: #000; }
 
 .date-generator-content-wrapper .form-submit {
   color: rgba(255, 255, 255, 0.2);
@@ -950,6 +975,17 @@ button:focus {
 /* Date field calendar*/
 #ui-datepicker-div {
   font-family: 'Roboto', sans-serif; }
+
+/*
+* @media - if the screen is smaller than 465px
+*/
+@media only screen and (max-width: 465px) {
+  .date-generator-content-wrapper h1 {
+    font-size: 35px; }
+  .date-generator-content-wrapper p {
+    font-size: 15px; }
+  .date-generator-content-wrapper input {
+    font-size: 15px; } }
 
 .about-malmoscenen .title h1 {
   font-family: 'Dosis', sans-serif;
