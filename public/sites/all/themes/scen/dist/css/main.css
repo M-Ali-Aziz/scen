@@ -775,7 +775,7 @@ button:focus {
   top: 760px; }
 
 /*
-* @media - if the screen is smaller than 960px
+* @media - if the screen is smaller than 990px
 */
 @media only screen and (max-width: 990px) {
   .content-content-wrapper {
@@ -802,6 +802,18 @@ button:focus {
   .circle1 {
     display: block;
     top: 135px; } }
+
+/*
+* @media - if the screen is smaller than 450px
+*/
+@media only screen and (max-width: 450px) {
+  .content-box {
+    width: 90%; }
+  .timeline {
+    height: 80%; }
+  .circle1 {
+    width: 20px;
+    height: 20px; } }
 
 .time-field {
   margin-bottom: 5px; }
@@ -1088,6 +1100,13 @@ button:focus {
 .font-italic {
   line-height: 30px;
   font-style: italic; }
+
+/*
+* @media - if the screen is smaller than 450px
+*/
+@media only screen and (max-width: 450px) {
+  .content-main-wrapper h1 {
+    font-size: 18px; } }
 
 .title-field {
   text-transform: uppercase; }

@@ -32,3 +32,12 @@
   font-style: italic;
 }
 
+
+/*
+* @media - if the screen is smaller than 450px
+*/
+@media only screen and (max-width: 450px) {
+  .content-main-wrapper h1 {
+    font-size: 18px;
+  }
+}
