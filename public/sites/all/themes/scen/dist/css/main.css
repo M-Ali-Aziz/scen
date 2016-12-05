@@ -513,7 +513,10 @@ body {
   .container-inline-date .form-item-date-date {
     width: 100%; }
   .date-generator-content-wrapper .container-inline-date input {
-    width: 100%; } }
+    width: 100%; }
+  #ui-datepicker-div,
+  #ui-datepicker-div tr {
+    width: 80%; } }
 
 /*
 * @media - if the screen is smaller than 465px

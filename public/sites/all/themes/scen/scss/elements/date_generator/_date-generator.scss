@@ -137,6 +137,12 @@
   .date-generator-content-wrapper .container-inline-date input {
     width: 100%;
   }
+
+  #ui-datepicker-div,
+  #ui-datepicker-div tr,
+  {
+    width: 80%;
+  }
 }
 
 /*
