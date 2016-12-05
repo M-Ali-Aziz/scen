@@ -886,7 +886,7 @@ button:focus {
     background: none, url("../../graphics/footer/instagram_white.svg") transparent 0 0 no-repeat; }
 
 /*
-* @media - if the screen is smaller than 960px
+* @media - if the screen is smaller than 990px
 */
 @media only screen and (max-width: 990px) {
   .footer-content-wrapper {
@@ -899,6 +899,13 @@ button:focus {
       margin: 0 auto 20px auto; }
     .organisations-logo.skanes-dansteater-logo {
       margin: 0 auto 50px auto; } }
+
+/*
+* @media - if the screen is smaller than 450px
+*/
+@media only screen and (max-width: 450px) {
+  .organisations-logo.malmo-stadsteater-logo {
+    width: 95%; } }
 
 .site-logo h1 {
   display: none; }

@@ -75,7 +75,7 @@
 
 
 /*
-* @media - if the screen is smaller than 960px
+* @media - if the screen is smaller than 990px
 */
 @media only screen and (max-width: 990px) {
   .footer-content-wrapper {
@@ -92,6 +92,18 @@
     }
     &.skanes-dansteater-logo {
       margin: 0 auto 50px auto;
+    }
+  }
+}
+
+/*
+* @media - if the screen is smaller than 450px
+*/
+@media only screen and (max-width: 450px) {
+  .organisations-logo{
+    &.malmo-stadsteater-logo {
+      width: 95%;
+
     }
   }
 }
