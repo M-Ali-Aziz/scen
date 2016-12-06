@@ -1,0 +1,4 @@
+; General information
+name = Date Generator Result
+description = Provide an example of date generator's result
+core = 7.x
