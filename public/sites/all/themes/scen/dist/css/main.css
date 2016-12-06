@@ -393,7 +393,7 @@ body {
 
 .date-generator-content-wrapper {
   position: relative;
-  max-width: 600px;
+  width: 600px;
   background: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: 100px auto 0 auto;
@@ -478,15 +478,15 @@ body {
   margin: 0; }
 
 .form-set-error-holder .messages {
-  border: 1px solid red;
-  position: absolute;
-  top: 80px;
-  right: 50%;
-  transform: translate(50%, 0);
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  width: 600px;
+  transform: translate(0, 90px);
   background: red;
   background: rgba(255, 0, 0, 0.3);
+  border: 1px solid red;
   border-radius: 10px;
-  padding: 10px;
   color: #FFF; }
 
 .form-set-error-holder .status {
@@ -505,7 +505,7 @@ body {
 */
 @media only screen and (max-width: 630px) {
   .date-generator-content-wrapper {
-    max-width: 95%; }
+    width: 95%; }
   .date-generator-content-wrapper input {
     width: 100%; }
   .container-inline-date .form-item-date,
@@ -514,6 +514,8 @@ body {
     width: 100%; }
   .date-generator-content-wrapper .container-inline-date input {
     width: 100%; }
+  .form-set-error-holder .messages {
+    width: 95%; }
   #ui-datepicker-div,
   #ui-datepicker-div tr {
     width: 80%; } }

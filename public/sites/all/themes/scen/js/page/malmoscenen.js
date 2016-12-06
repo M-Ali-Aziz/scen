@@ -13,6 +13,7 @@ jQuery(document).ready(function($) {
     $('.main-menu-button-close').css('display', 'none');
     $('.main-menu').css('display', 'none');
   });
+
   // Show About Malmöscenen page - main menu
   $(document).on('click', '.main-menu a', function() {
     var attr = $(this).attr("href");
@@ -22,6 +23,10 @@ jQuery(document).ready(function($) {
     }
     $('.main-menu-button-close').click();
   });
+
+  // Form success/error messages
+  $('.form-set-error-holder').insertBefore('.date-generator-content-wrapper');
+
 
   /*
    * Content-top
@@ -51,6 +56,7 @@ jQuery(document).ready(function($) {
   if ($(window).width() < 630) {
     $('#edit-email').attr('placeholder', 'Enter your e-mail.');
   }
+
 
   /*
    * Footer
