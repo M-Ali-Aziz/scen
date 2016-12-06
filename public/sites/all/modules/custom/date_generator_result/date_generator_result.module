@@ -68,8 +68,7 @@ function date_generator_result_block_view($delta = '') {
       // Randomly get one nid from $all_nids['after']
       $activity_nids['after'] = $all_nids['after'][array_rand($all_nids['after'], 1)];
 
-
-      // Add before performance nodos
+      // Add before performance nodes
       foreach ($activity_nids['before'] as $before_nid) {
         $before_nodes[] = node_view(node_load($before_nid), 'teaser');
       }
@@ -78,7 +77,6 @@ function date_generator_result_block_view($delta = '') {
 
       // Add after performance node
       $after_node = node_view(node_load($activity_nids['after']), 'teaser');
-      
 
       // Add the nodes to the block content
       $block['content'] = theme('date_generator_result_template', array(
@@ -111,52 +109,5 @@ function date_generator_result_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-
-
-// Get nodes function
-function get_nodes() {
-  // Load all nodes of defined type.
-  $nodes = node_load_multiple(array(), array('type' => array(
-    'before_activity',
-    'malmo_stadsteater',
-    'malmo_opera',
-    'skanes_dansteater',
-    'after_activity',
-  )));
-
-  // Loop all nodes.
-  foreach ($nodes as $node) {
-
-    // Getting node ids(nid) of type malmo_stadsteater, malmo_opera and skanes_dansteater
-    if ($node->type == 'malmo_stadsteater' || $node->type == 'malmo_opera' || $node->type == 'skanes_dansteater') {
-      $all_nids['performance'][] = $node->nid; 
-    }
-
-    // Getting node ids(nid) of type before_activity
-    if ($node->type == 'before_activity') {
-      $all_nids['before'][] = $node->nid;
-    }
-
-    // Getting node ids(nid) of type after_activity
-    if ($node->type == 'after_activity') {
-      $all_nids['after'][] = $node->nid;
-    }
-  }
-
-  // Get random nids
-  // Randomly getting two nids from $all_nids['before']
-  foreach (array_rand($all_nids['before'], 2) as $key) {
-    $activity_nids['before'][] = $all_nids['before'][$key];
-  }
-
-  // Randomly get one nid from $all_nids['performance']
-  $activity_nids['performance'] = $all_nids['performance'][array_rand($all_nids['performance'], 1)];
-
-  // Randomly get one nid from $all_nids['after']
-  $activity_nids['after'] = $all_nids['after'][array_rand($all_nids['after'], 1)];
-
-  return $activity_nids;
-}
-
 
 
