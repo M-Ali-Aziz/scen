@@ -38,7 +38,7 @@ function date_generator_result_block_view($delta = '') {
       )));
 
       if (!count($nodes) > 3) {
-        $block['content'] = '<h1 style="padding: 30px;">' . t('Please Create your first dream evening to see the result here:') . '</h1>';
+        $block['content'] = '<h1 style="padding: 30px;">' . t('NO result found!') . '</h1>';
       }
       else {
         // Loop all nodes.
