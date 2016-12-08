@@ -30,13 +30,68 @@
   margin: 0;
 }
 .content-box {
+  position: relative;
   width: 400px;
   padding: 20px 40px;
-  background-color: white;
-  border: 2px solid rgba(0,0,0,.2);
+  background-color: #FFF;
+  border: 2px solid #ccc;
   border-radius: 20px;
   margin-bottom: 20px;
   float: left;
+
+  &::before {
+    @include triangle(30px, #ccc, left);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    margin-top: -15px;
+  }
+
+  &::after {
+    @include triangle(26px, #FFF, left);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -13px;
+    margin-top: -13px;
+  }
+
+  &:nth-child(2n) {
+    &::before {
+      border: 0;
+      @include triangle(30px, #ccc, right);
+      right: -15px;
+      left: auto;
+    }
+
+    &::after {
+      border: 0;
+      @include triangle(26px, #FFF, right);
+      right: -13px;
+      left: auto;
+    }
+  }
+}
+
+.start-box {
+   &::before {
+      top: 35%;
+    }
+
+    &::after {
+      top: 35%;
+    }
+}
+
+.performance-node {
+   &::before {
+      top: 80px;
+    }
+
+    &::after {
+      top: 80px;
+    }
 }
 
 .before-node-first,
@@ -98,16 +153,16 @@
   top: 180px;
 }
 .circle2 {
-  top: 260px;
+  top: 265px;
 }
 .circle3 {
-  top: 330px;
+  top: 335px;
 }
 .circle4 {
-  top: 520px;
+  top: 525px;
 }
 .circle5 {
-  top: 700px;
+  top: 705px;
 }
 .circle6 {
   top: 760px;
@@ -128,7 +183,14 @@
   .content-box {
     margin: 0 auto 20px auto;
     float: none;
-    position: relative;
+
+    &::before {
+      visibility: hidden;
+    }
+
+    &::after {
+      visibility: hidden;
+    }
   }
 
   .timeline {
