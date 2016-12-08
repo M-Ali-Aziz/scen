@@ -689,7 +689,8 @@ button:focus {
   position: relative;
   width: 960px;
   margin: 0 auto;
-  padding: 80px 0; }
+  padding: 80px 0;
+  overflow: auto; }
 
 .content-main-wrapper h1 {
   margin: 0 0 50px 0; }
@@ -703,28 +704,25 @@ button:focus {
   background-color: white;
   border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  float: left; }
 
 .before-node-first,
 .performance-node,
 .end-box-one {
-  position: absolute;
-  right: 0; }
-
-.before-node-first {
-  top: 200px; }
-
-.performance-node {
-  top: 360px; }
+  float: right; }
 
 .end-box-one {
-  top: 670px; }
+  clear: both; }
+
+.before-node-first {
+  margin-top: 50px; }
 
 .before-node-secund {
   margin-bottom: 70px; }
 
-.after-node {
-  margin-bottom: 100px; }
+.end-box-two {
+  margin-top: 40px; }
 
 .performance-node {
   padding: 20px; }
@@ -785,20 +783,12 @@ button:focus {
   .content-main-wrapper h1 {
     margin-bottom: 80px; }
   .content-box {
-    margin: 0 auto 20px auto; }
-  .start-box,
-  .before-node-first,
-  .before-node-secund,
-  .performance-node,
-  .after-node,
-  .end-box-one,
-  .end-box-two {
-    position: relative;
-    top: auto;
-    z-index: 1; }
+    margin: 0 auto 20px auto;
+    float: none;
+    position: relative; }
   .timeline {
     top: 150px;
-    height: 1100px; }
+    height: 80%; }
   .circle {
     display: none; }
   .circle1 {
@@ -811,8 +801,6 @@ button:focus {
 @media only screen and (max-width: 450px) {
   .content-box {
     width: 90%; }
-  .timeline {
-    height: 80%; }
   .circle1 {
     width: 20px;
     height: 20px; } }
